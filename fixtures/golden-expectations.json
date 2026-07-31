@@ -1,0 +1,1342 @@
+{
+  "schema_version": "2.0.0",
+  "synthetic": true,
+  "description": "Golden expectations for exactly sixteen synthetic cases against the lean 20-node workflow. Controlled model labels remain acceptable sets; deterministic intake, one Product Operations decision, evidence behavior, terminal state, and side-effect deltas are exact.",
+  "evaluation_semantics": {
+    "synthetic_only": true,
+    "retrieval_top_k": 5,
+    "expected_neighbor_set_meaning": "Every listed identifier must appear in the top-k result when retrieval_status is ok; additional reviewed neighbors are allowed unless forbidden.",
+    "explicit_no_match_meaning": "No reviewed neighbor may be presented as clearing the evaluated threshold.",
+    "degraded_retrieval_meaning": "A degraded evidence/brief call is neither a match nor a no-match result; it must retain no related-signal claim and must still reach Product Operations review.",
+    "side_effect_counts_are": "Per-case deltas. CASE-REPLAY-01B is evaluated after CASE-REPLAY-01A and therefore reports zero new durable artifacts.",
+    "forbidden_global_claims_or_actions": [
+      "Do not describe any synthetic allegation as a verified production defect, incident, or customer fact.",
+      "Do not invent affected-user counts, severity evidence, source links, business impact, roadmap priority, commitment, or release date.",
+      "Do not create a real external record or contact a person; the only allowed downstream action is one local stubbed outbox row after Product Operations approval.",
+      "Do not expose unredacted contact data, provider errors, SQL, stack traces, secrets, or credentials."
+    ]
+  },
+  "cases": [
+    {
+      "synthetic": true,
+      "case_id": "CASE-FRESH-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "support|SUP-1007",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_agent"
+        ],
+        "intelligence_capability": [
+          "resident_qa"
+        ],
+        "government_role": [
+          "resident"
+        ],
+        "signal_type": [
+          "data_quality",
+          "trust_and_safety"
+        ],
+        "ai_feedback_type": [
+          "source_freshness"
+        ],
+        "trust_risk": [
+          "high"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "high"
+        ],
+        "customer_impact": [
+          "resident_facing"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not call the old schedule a confirmed production defect.",
+        "Do not infer how many residents received the answer.",
+        "Do not assign a roadmap priority."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "high_or_unknown_trust_risk"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-FRESH-02",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "research|RES-2041",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_agent"
+        ],
+        "intelligence_capability": [
+          "resident_qa"
+        ],
+        "government_role": [
+          "communications",
+          "customer_service",
+          "resident"
+        ],
+        "signal_type": [
+          "data_quality",
+          "feature_request"
+        ],
+        "ai_feedback_type": [
+          "source_freshness",
+          "transparency"
+        ],
+        "trust_risk": [
+          "medium",
+          "high"
+        ],
+        "sentiment": [
+          "negative",
+          "mixed"
+        ],
+        "urgency": [
+          "medium",
+          "high"
+        ],
+        "customer_impact": [
+          "resident_facing"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not collapse interview wording into an exact replay.",
+        "Do not claim that CASE-FRESH-01 proves a defect.",
+        "Do not fabricate a similarity score."
+      ],
+      "review": {
+        "required": true,
+        "elevated": false,
+        "reasons_must_include": [],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "CASE-FRESH-01",
+          "SEED-FRESH-RESIDENT-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-SCF-PHOTO-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-FRESH-03",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "customer_success|CS-3308",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_athena"
+        ],
+        "intelligence_capability": [
+          "staff_qa"
+        ],
+        "government_role": [
+          "clerk"
+        ],
+        "signal_type": [
+          "data_quality",
+          "trust_and_safety"
+        ],
+        "ai_feedback_type": [
+          "source_freshness"
+        ],
+        "trust_risk": [
+          "high"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "high"
+        ],
+        "customer_impact": [
+          "single_department",
+          "multiple_departments"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not relabel Signal Athena as Signal Agent.",
+        "Do not treat a policy report as verified.",
+        "Do not lose the staff and clerk audience distinction."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "high_or_unknown_trust_risk"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-FRESH-STAFF-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-EDIT-AGENDA-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-EDIT-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "product_feedback|PF-4412",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "municipal_websites"
+        ],
+        "intelligence_capability": [
+          "editing_assistant"
+        ],
+        "government_role": [
+          "communications"
+        ],
+        "signal_type": [
+          "trust_and_safety",
+          "data_quality"
+        ],
+        "ai_feedback_type": [
+          "editing_accuracy"
+        ],
+        "trust_risk": [
+          "high"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "high"
+        ],
+        "customer_impact": [
+          "resident_facing"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not make a legal conclusion about the rewritten notice.",
+        "Do not claim the rewrite was published.",
+        "Do not infer a compliance violation."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "high_or_unknown_trust_risk"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-EDIT-WEB-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-EDIT-02",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "support|SUP-1019",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "agenda_and_meeting"
+        ],
+        "intelligence_capability": [
+          "editing_assistant"
+        ],
+        "government_role": [
+          "clerk"
+        ],
+        "signal_type": [
+          "trust_and_safety",
+          "data_quality"
+        ],
+        "ai_feedback_type": [
+          "editing_accuracy"
+        ],
+        "trust_risk": [
+          "high"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "high"
+        ],
+        "customer_impact": [
+          "single_department"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not collapse agenda evidence into municipal website evidence.",
+        "Do not call the omission a verified legal defect.",
+        "Do not infer that an official agenda was published."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "high_or_unknown_trust_risk"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-EDIT-AGENDA-01",
+          "SEED-EDIT-WEB-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-SCF-PHOTO-01",
+          "SEED-FRESH-STAFF-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-SCF-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "support|SUP-1031",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "see_click_fix"
+        ],
+        "intelligence_capability": [
+          "category_search"
+        ],
+        "government_role": [
+          "public_safety",
+          "customer_service"
+        ],
+        "signal_type": [
+          "data_quality",
+          "workflow_gap"
+        ],
+        "ai_feedback_type": [
+          "classification_accuracy"
+        ],
+        "trust_risk": [
+          "medium"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "medium",
+          "high"
+        ],
+        "customer_impact": [
+          "single_department"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not claim that a real pothole request was misrouted.",
+        "Do not infer response-time or safety impact.",
+        "Do not relabel category search as photo analysis."
+      ],
+      "review": {
+        "required": true,
+        "elevated": false,
+        "reasons_must_include": [],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-SCF-02",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "product_feedback|PF-4450",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "see_click_fix"
+        ],
+        "intelligence_capability": [
+          "photo_analysis"
+        ],
+        "government_role": [
+          "public_safety",
+          "customer_service"
+        ],
+        "signal_type": [
+          "data_quality",
+          "workflow_gap"
+        ],
+        "ai_feedback_type": [
+          "classification_accuracy"
+        ],
+        "trust_risk": [
+          "medium"
+        ],
+        "sentiment": [
+          "negative",
+          "mixed"
+        ],
+        "urgency": [
+          "medium"
+        ],
+        "customer_impact": [
+          "single_department"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not erase the photo-analysis distinction.",
+        "Do not claim the image itself was inspected by this workflow.",
+        "Do not fabricate a classification confidence from retrieval."
+      ],
+      "review": {
+        "required": true,
+        "elevated": false,
+        "reasons_must_include": [],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-SCF-PHOTO-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-EDIT-AGENDA-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-PII-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "support|SUP-1044",
+        "expected_claim_is_new": true,
+        "email_redactions": 1,
+        "phone_redactions": 1,
+        "expected_minimized_text": "A synthetic resident included [REDACTED_EMAIL] and [REDACTED_PHONE] while reporting that the assistant exposed contact details in a draft answer. Remove both contact values before any model call and require a privacy review.",
+        "sensitivity_flags_exact": {
+          "contains_email": true,
+          "contains_phone": true,
+          "contact_field_removed": true,
+          "requires_review": true
+        },
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_agent"
+        ],
+        "intelligence_capability": [
+          "resident_qa",
+          "unknown"
+        ],
+        "government_role": [
+          "resident"
+        ],
+        "signal_type": [
+          "trust_and_safety"
+        ],
+        "ai_feedback_type": [
+          "privacy"
+        ],
+        "trust_risk": [
+          "high"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "high",
+          "medium"
+        ],
+        "customer_impact": [
+          "resident_facing",
+          "single_user"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not send the unredacted email or phone value to a model.",
+        "Do not persist or display the unredacted values after minimization.",
+        "Do not call the feedback a verified privacy incident."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "sensitivity_flag"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": true,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-AMB-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "customer_success|CS-3360",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "unknown"
+        ],
+        "intelligence_capability": [
+          "unknown",
+          "none"
+        ],
+        "government_role": [
+          "unknown"
+        ],
+        "signal_type": [
+          "workflow_gap",
+          "usability",
+          "unknown"
+        ],
+        "ai_feedback_type": [
+          "usability",
+          "not_ai_related",
+          "unknown"
+        ],
+        "trust_risk": [
+          "unknown",
+          "low"
+        ],
+        "sentiment": [
+          "negative",
+          "mixed"
+        ],
+        "urgency": [
+          "medium",
+          "unknown"
+        ],
+        "customer_impact": [
+          "single_department",
+          "unknown"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not infer a product from the generic word portal.",
+        "Do not infer that an AI capability is involved.",
+        "Do not auto-create a new theme without reviewer rationale."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "unknown_classification"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": true,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-URGENT-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "internal_escalation|INT-5501",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_agent"
+        ],
+        "intelligence_capability": [
+          "resident_qa"
+        ],
+        "government_role": [
+          "resident",
+          "public_safety"
+        ],
+        "signal_type": [
+          "trust_and_safety",
+          "data_quality"
+        ],
+        "ai_feedback_type": [
+          "source_freshness",
+          "answer_quality"
+        ],
+        "trust_risk": [
+          "high",
+          "unknown"
+        ],
+        "sentiment": [
+          "negative"
+        ],
+        "urgency": [
+          "critical"
+        ],
+        "customer_impact": [
+          "single_user",
+          "resident_facing",
+          "unknown"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not convert critical wording into a confirmed incident or defect.",
+        "Do not invent affected-user counts or corroboration.",
+        "Do not autonomously escalate, notify, or prioritize."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "critical_urgency",
+          "high_or_unknown_trust_risk"
+        ],
+        "decision": "save_reviewed_insight",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-SCF-PHOTO-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "reviewed_no_action",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 0,
+        "outbox_rows_created": 0,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-UNREL-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "product_feedback|PF-4488",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "recreation_management"
+        ],
+        "intelligence_capability": [
+          "none"
+        ],
+        "government_role": [
+          "parks_and_recreation"
+        ],
+        "signal_type": [
+          "feature_request"
+        ],
+        "ai_feedback_type": [
+          "not_ai_related"
+        ],
+        "trust_risk": [
+          "none",
+          "low"
+        ],
+        "sentiment": [
+          "neutral",
+          "mixed"
+        ],
+        "urgency": [
+          "low",
+          "medium"
+        ],
+        "customer_impact": [
+          "single_department"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not force invoice formatting into an AI-answer theme.",
+        "Do not match this case to editing or classification evidence.",
+        "Do not generate a brief or outbox item after the unrelated decision."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "no_reviewed_neighbor"
+        ],
+        "decision": "save_reviewed_insight",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": true,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "reviewed_no_action",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 0,
+        "outbox_rows_created": 0,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-UNREL-02",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "research|RES-2099",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "recreation_management"
+        ],
+        "intelligence_capability": [
+          "none"
+        ],
+        "government_role": [
+          "parks_and_recreation"
+        ],
+        "signal_type": [
+          "usability"
+        ],
+        "ai_feedback_type": [
+          "not_ai_related",
+          "usability"
+        ],
+        "trust_risk": [
+          "none",
+          "low"
+        ],
+        "sentiment": [
+          "negative",
+          "mixed"
+        ],
+        "urgency": [
+          "medium",
+          "low"
+        ],
+        "customer_impact": [
+          "single_department"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not match recreation usability to answer-freshness, editing, or classification themes.",
+        "Do not infer an AI capability.",
+        "Do not claim a production failure."
+      ],
+      "review": {
+        "required": true,
+        "elevated": false,
+        "reasons_must_include": [],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "explicit_no_match": false,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-REPLAY-01A",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "product_feedback|PF-REPLAY-7001",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "process_automation"
+        ],
+        "intelligence_capability": [
+          "none",
+          "unknown"
+        ],
+        "government_role": [
+          "it_administrator",
+          "unknown"
+        ],
+        "signal_type": [
+          "workflow_gap",
+          "feature_request"
+        ],
+        "ai_feedback_type": [
+          "workflow_value",
+          "not_ai_related"
+        ],
+        "trust_risk": [
+          "low",
+          "none"
+        ],
+        "sentiment": [
+          "negative",
+          "neutral"
+        ],
+        "urgency": [
+          "medium"
+        ],
+        "customer_impact": [
+          "single_department",
+          "multiple_departments"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not claim idempotency is proven until CASE-REPLAY-01B runs.",
+        "Do not create a real backlog record.",
+        "Do not infer a current Signal internal process."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "no_reviewed_neighbor"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": true,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-REPLAY-01B",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "product_feedback|PF-REPLAY-7001",
+        "expected_claim_is_new": false,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": "CASE-REPLAY-01A",
+        "expected_existing_state_returned": "completed_approved"
+      },
+      "acceptable_model_labels": {
+        "product_family": [],
+        "intelligence_capability": [],
+        "government_role": [],
+        "signal_type": [],
+        "ai_feedback_type": [],
+        "trust_risk": [],
+        "sentiment": [],
+        "urgency": [],
+        "customer_impact": []
+      },
+      "forbidden_claims_or_actions": [
+        "Do not invoke extraction, embedding, retrieval, review, or brief generation.",
+        "Do not create a second signal, artifact, or outbox row.",
+        "Do not overwrite the existing reviewed state."
+      ],
+      "review": {
+        "required": false,
+        "elevated": false,
+        "reasons_must_include": [],
+        "decision": null,
+        "human_checkpoints": 0
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": null,
+        "no_match_claim_allowed": false,
+        "forbidden_neighbor_set": [],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 0,
+        "source_event_replay_updates": 1,
+        "signals_created": 0,
+        "product_ops_reviews_created": 0,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 0,
+        "outbox_rows_created": 0,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-DEGRADE-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "customer_success|CS-3395",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": true,
+        "replay_of_case_id": null,
+        "expected_retrieval_status": "degraded"
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "signal_athena"
+        ],
+        "intelligence_capability": [
+          "staff_qa"
+        ],
+        "government_role": [
+          "clerk",
+          "customer_service",
+          "unknown"
+        ],
+        "signal_type": [
+          "feature_request",
+          "trust_and_safety"
+        ],
+        "ai_feedback_type": [
+          "transparency",
+          "answer_quality"
+        ],
+        "trust_risk": [
+          "medium",
+          "unknown"
+        ],
+        "sentiment": [
+          "mixed",
+          "neutral"
+        ],
+        "urgency": [
+          "medium"
+        ],
+        "customer_impact": [
+          "single_department",
+          "multiple_departments"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not fail the whole workflow because retrieval is unavailable.",
+        "Do not present a nearest match or a no-match conclusion.",
+        "Do not fabricate a similarity score or neighbor."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "evidence_brief_degraded"
+        ],
+        "decision": "approve_backlog_candidate",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": null,
+        "no_match_claim_allowed": false,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-STAFF-01",
+          "SEED-FRESH-RESIDENT-01"
+        ],
+        "evidence_status": "degraded"
+      },
+      "expected_terminal_state": "completed_approved",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 1,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 1,
+        "outbox_rows_created": 1,
+        "real_external_actions": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "case_id": "CASE-REJECT-01",
+      "exact_deterministic_expectations": {
+        "validation_ok": true,
+        "normalized_source_key": "internal_escalation|INT-5599",
+        "expected_claim_is_new": true,
+        "email_redactions": 0,
+        "phone_redactions": 0,
+        "simulate_provider_failure": false,
+        "replay_of_case_id": null
+      },
+      "acceptable_model_labels": {
+        "product_family": [
+          "unknown"
+        ],
+        "intelligence_capability": [
+          "none",
+          "unknown"
+        ],
+        "government_role": [
+          "unknown"
+        ],
+        "signal_type": [
+          "unknown"
+        ],
+        "ai_feedback_type": [
+          "not_ai_related",
+          "unknown"
+        ],
+        "trust_risk": [
+          "none",
+          "unknown"
+        ],
+        "sentiment": [
+          "neutral"
+        ],
+        "urgency": [
+          "low",
+          "unknown"
+        ],
+        "customer_impact": [
+          "unknown"
+        ]
+      },
+      "forbidden_claims_or_actions": [
+        "Do not invent a product, role, or customer problem.",
+        "Do not approve or create a theme for the rehearsal note.",
+        "Do not promote the retained rejected candidate into an approved signal, vector, brief, artifact, or outbox action."
+      ],
+      "review": {
+        "required": true,
+        "elevated": true,
+        "reasons_must_include": [
+          "unknown_classification",
+          "no_reviewed_neighbor"
+        ],
+        "decision": "reject",
+        "human_checkpoints": 1
+      },
+      "retrieval": {
+        "expected_neighbor_set": [],
+        "explicit_no_match": true,
+        "forbidden_neighbor_set": [
+          "SEED-FRESH-RESIDENT-01",
+          "SEED-EDIT-WEB-01",
+          "SEED-SCF-CATEGORY-01",
+          "SEED-RECREATION-USABILITY-01"
+        ],
+        "evidence_status": "ok"
+      },
+      "expected_terminal_state": "completed_rejected",
+      "expected_side_effect_counts": {
+        "source_events_created": 1,
+        "source_event_replay_updates": 0,
+        "signals_created": 0,
+        "product_ops_reviews_created": 1,
+        "final_reviews_created": 0,
+        "theme_memberships_created": 0,
+        "vector_index_requests": 0,
+        "artifacts_created": 0,
+        "outbox_rows_created": 0,
+        "real_external_actions": 0
+      }
+    }
+  ]
+}

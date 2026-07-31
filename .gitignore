@@ -1,0 +1,45 @@
+# Machine-local secrets
+.env
+.env.*
+**/.env
+!**/.env.example
+!.env.example
+local development instructions/settings.local.json
+runtime/.owner.env
+runtime/.n8n-mcp.env
+
+# Runtime state and sensitive exports
+runtime/backups/
+runtime/exports/
+runtime/logs/
+runtime/tmp/
+*.log
+
+# Generated dependency and package-manager state
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+
+# Generated coverage and caches
+coverage/
+.cache/
+.playwright/
+.playwright-mcp/
+test-results/
+playwright-report/
+tmp/
+temp/
+
+# Retired local orchestration state
+.tasks.json
+
+# Generated local evidence that may expose transient IDs or machine paths
+evaluation/local/
+submission/.working/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
