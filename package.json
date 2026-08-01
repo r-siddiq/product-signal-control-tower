@@ -1,0 +1,12 @@
+{
+  "name": "signal-ai-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo:check": "node tools/run-playwright-demo.mjs --mode dry-run",
+    "demo": "node tools/run-playwright-demo.mjs --mode headed"
+  },
+  "devDependencies": {
+    "playwright": "1.61.1"
+  }
+}

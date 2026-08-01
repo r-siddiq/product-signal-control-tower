@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "synthetic": true,
+  "workflow_name": "Product Signal Control Tower",
+  "default_order": [
+    "invalid",
+    "replay",
+    "reject",
+    "approve"
+  ],
+  "scenarios": {
+    "invalid": {
+      "scenario_id": "DEMO-INVALID-SHORT-01",
+      "fixture_ref": null,
+      "preparation_fixture_ref": null,
+      "signal_text": "Portal feedback unclear.",
+      "product_hint": "unknown",
+      "source_context": "product_feedback",
+      "review_decision": null,
+      "review_rationale": null,
+      "expected": {
+        "execution_status": "error",
+        "terminal_node": "Stop Invalid Signal",
+        "provider_calls": 0,
+        "human_reviews": 0,
+        "source_events": 0,
+        "replay_count": 0,
+        "signals": 0,
+        "product_ops_reviews": 0,
+        "artifacts": 0,
+        "outbox_rows": 0
+      }
+    },
+    "replay": {
+      "scenario_id": "DEMO-EXACT-REPLAY-01",
+      "fixture_ref": "CASE-REPLAY-01B",
+      "preparation_fixture_ref": "CASE-REPLAY-01A",
+      "review_decision": null,
+      "review_rationale": null,
+      "expected": {
+        "execution_status": "success",
+        "terminal_node": "Return Replay Outcome",
+        "terminal_state": "completed_approved",
+        "provider_calls": 0,
+        "human_reviews": 0,
+        "source_events": 0,
+        "replay_count": 1,
+        "signals": 0,
+        "product_ops_reviews": 0,
+        "artifacts": 0,
+        "outbox_rows": 0
+      }
+    },
+    "reject": {
+      "scenario_id": "DEMO-HUMAN-REJECT-01",
+      "fixture_ref": "CASE-REJECT-01",
+      "preparation_fixture_ref": null,
+      "review_decision": "reject",
+      "review_rationale": "Synthetic Product Operations rejection: this rehearsal note is unrelated to a customer signal or government workflow.",
+      "expected": {
+        "execution_status": "success",
+        "terminal_node": "Close Without Artifact",
+        "terminal_state": "completed_rejected",
+        "provider_calls": 2,
+        "human_reviews": 1,
+        "source_events": 1,
+        "replay_count": 0,
+        "signals": 0,
+        "product_ops_reviews": 1,
+        "artifacts": 0,
+        "outbox_rows": 0
+      }
+    },
+    "approve": {
+      "scenario_id": "DEMO-FULL-APPROVE-01",
+      "fixture_ref": "CASE-FRESH-02",
+      "preparation_fixture_ref": null,
+      "review_decision": "approve_backlog_candidate",
+      "review_rationale": "Synthetic Product Operations approval: retain the cited source-freshness evidence as one local backlog-candidate stub for discovery.",
+      "expected": {
+        "execution_status": "success",
+        "terminal_node": "Finalize Approved Artifact and Outbox",
+        "terminal_state": "completed_approved",
+        "provider_calls": 2,
+        "human_reviews": 1,
+        "source_events": 1,
+        "replay_count": 0,
+        "signals": 1,
+        "product_ops_reviews": 1,
+        "artifacts": 1,
+        "outbox_rows": 1
+      }
+    }
+  }
+}

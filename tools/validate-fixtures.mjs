@@ -9,6 +9,7 @@ const readJson = (name) => JSON.parse(readFileSync(join(fixtureDir, name), 'utf8
 const signals = readJson('synthetic-signals.json');
 const golden = readJson('golden-expectations.json');
 const seeds = readJson('reviewed-signal-seed.json');
+const browserDemo = readJson('playwright-demo-scenarios.json');
 
 const mandatoryIds = [
   'CASE-FRESH-01',
@@ -40,7 +41,7 @@ const assert = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
-for (const document of [signals, golden, seeds]) {
+for (const document of [signals, golden, seeds, browserDemo]) {
   assert(document.synthetic === true, `${document.description ?? 'fixture document'} must declare synthetic=true`);
 }
 
@@ -48,6 +49,8 @@ const signalCases = signals.cases ?? [];
 const goldenCases = golden.cases ?? [];
 const signalIds = signalCases.map((entry) => entry.demo_case_id);
 const goldenIds = goldenCases.map((entry) => entry.case_id);
+const browserScenarioNames = browserDemo.default_order ?? [];
+const browserScenarios = browserDemo.scenarios ?? {};
 
 assert(signalCases.length === 16, `expected 16 signal cases, found ${signalCases.length}`);
 assert(goldenCases.length === 16, `expected 16 golden cases, found ${goldenCases.length}`);
@@ -57,6 +60,31 @@ assert(new Set(signalIds).size === 16, 'signal case IDs must be unique');
 assert(new Set(goldenIds).size === 16, 'golden case IDs must be unique');
 assert(JSON.stringify([...signalIds].sort()) === JSON.stringify([...mandatoryIds].sort()), 'signal case IDs do not match the mandatory set');
 assert(JSON.stringify([...goldenIds].sort()) === JSON.stringify([...mandatoryIds].sort()), 'golden case IDs do not match the mandatory set');
+assert(browserDemo.schema_version === '1.0.0', 'browser demo fixtures must use schema v1');
+assert(
+  JSON.stringify(browserScenarioNames) === JSON.stringify(['invalid', 'replay', 'reject', 'approve']),
+  'browser demo order must be invalid, replay, reject, approve',
+);
+assert(Object.keys(browserScenarios).length === 4, 'browser demo must define exactly four visible scenarios');
+assert(
+  browserScenarios.invalid?.signal_text?.length > 0
+    && browserScenarios.invalid.signal_text.length < 30,
+  'browser invalid fixture must be non-empty and shorter than the 30-character workflow minimum',
+);
+assert(browserScenarios.replay?.preparation_fixture_ref === 'CASE-REPLAY-01A', 'browser replay must use the real canonical preparation fixture');
+assert(browserScenarios.replay?.fixture_ref === 'CASE-REPLAY-01B', 'browser replay must use the exact replay fixture');
+assert(browserScenarios.reject?.fixture_ref === 'CASE-REJECT-01', 'browser rejection must use CASE-REJECT-01');
+assert(browserScenarios.reject?.review_decision === 'reject', 'browser rejection must simulate a human reject decision');
+assert(browserScenarios.approve?.fixture_ref === 'CASE-FRESH-02', 'browser approval must use CASE-FRESH-02');
+assert(browserScenarios.approve?.review_decision === 'approve_backlog_candidate', 'browser approval must create only the local backlog-candidate stub');
+for (const scenarioName of browserScenarioNames) {
+  const scenario = browserScenarios[scenarioName];
+  assert(scenario?.scenario_id?.startsWith('DEMO-'), `${scenarioName} must have a synthetic DEMO scenario ID`);
+  assert(scenario?.expected, `${scenarioName} must define deterministic expectations`);
+  for (const fixtureReference of [scenario?.fixture_ref, scenario?.preparation_fixture_ref].filter(Boolean)) {
+    assert(signalIds.includes(fixtureReference), `${scenarioName} references missing fixture ${fixtureReference}`);
+  }
+}
 
 for (const entry of signalCases) {
   assert(entry.synthetic === true, `${entry.demo_case_id} must declare synthetic=true`);
@@ -146,6 +174,7 @@ if (failures.length > 0) {
     signal_cases: signalCases.length,
     golden_cases: goldenCases.length,
     reviewed_seeds: seedSignals.length,
+    browser_demo_scenarios: browserScenarioNames.length,
     future_embedding_candidate: seeds.embedding_contract.model,
     future_embedding_dimensions: seeds.embedding_contract.dimensions,
     embedding_selection_status: seeds.embedding_contract.selection_status,
