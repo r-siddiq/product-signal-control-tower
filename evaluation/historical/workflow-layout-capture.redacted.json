@@ -1,0 +1,51 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "1.0.0",
+    "synthetic": true,
+    "status": "workflow_layout_acceptance_passed",
+    "workflow": "Product Signal Control Tower",
+    "functional_nodes": 20,
+    "visual_groups": 4,
+    "edge_count": 23,
+    "horizontal_extent": {
+      "min_x": 0,
+      "max_x": 4480
+    },
+    "checks": {
+      "non_overlapping_visual_groups": true,
+      "every_node_inside_its_group": true,
+      "no_node_collisions": true,
+      "no_backward_edges": true,
+      "main_spine_strictly_left_to_right": true,
+      "branches_separated_vertically": true
+    },
+    "group_containment": [
+      {
+        "note": "[redacted]",
+        "members": 8,
+        "outside": []
+      },
+      {
+        "note": "[redacted]",
+        "members": 7,
+        "outside": []
+      },
+      {
+        "note": "[redacted]",
+        "members": 3,
+        "outside": []
+      },
+      {
+        "note": "[redacted]",
+        "members": 2,
+        "outside": []
+      }
+    ],
+    "violations": {
+      "note_overlaps": [],
+      "node_collisions": [],
+      "backward_edges": []
+    }
+  }
+}

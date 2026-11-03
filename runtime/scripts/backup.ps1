@@ -4,7 +4,7 @@ param()
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$ProjectName = 'signal-ai-demo'
+$ProjectName = 'product-signal-control-tower'
 $RuntimeRoot = [System.IO.Path]::GetFullPath((Join-Path -Path $PSScriptRoot -ChildPath '..'))
 $WorkspaceRoot = [System.IO.Path]::GetFullPath((Join-Path -Path $RuntimeRoot -ChildPath '..'))
 $ComposePath = Join-Path -Path $RuntimeRoot -ChildPath 'compose.yaml'

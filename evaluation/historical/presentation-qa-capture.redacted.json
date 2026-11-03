@@ -1,0 +1,117 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "1.0",
+    "captured_at": "2026-07-30T17:09:37-07:00",
+    "scope": "[redacted]",
+    "status": "passed",
+    "standalone_html": {
+      "path": "[redacted]",
+      "bytes": 213055,
+      "sha256": "[redacted]",
+      "file_url_load": "[redacted]",
+      "scene_count": 15,
+      "remote_resource_count": 0,
+      "console_error_count": 0,
+      "page_error_count": 0,
+      "viewports": [
+        {
+          "width": 1366,
+          "height": 768,
+          "horizontal_overflow_count": 0,
+          "vertically_scrollable_scene_count": 6,
+          "maximum_vertical_scroll_pixels": 104,
+          "critical_content_clipping_count": 0,
+          "minimum_rendered_text_pixels": 10.08
+        },
+        {
+          "width": 1920,
+          "height": 1080,
+          "horizontal_overflow_count": 0,
+          "vertically_scrollable_scene_count": 0,
+          "maximum_vertical_scroll_pixels": 0,
+          "critical_content_clipping_count": 0,
+          "minimum_rendered_text_pixels": 11.16
+        }
+      ],
+      "screen_typography_contract": {
+        "minimum_required_text_pixels": 10,
+        "typical_supporting_text_pixels": "[redacted]",
+        "standard_scene_heading_pixels_at_1366": "[redacted]",
+        "dense_scenes_scroll_instead_of_shrinking_text": true,
+        "status": "passed"
+      },
+      "ultra_wide_layout": {
+        "width": 3824,
+        "height": 1961,
+        "root_font_pixels": 24,
+        "content_max_width_pixels": 2700,
+        "scene_overflow_count": 0,
+        "status": "passed"
+      },
+      "keyboard": {
+        "next_scene": "[redacted]",
+        "presenter_notes": "[redacted]",
+        "source_drawer_open_close": "[redacted]",
+        "theme_toggle": "[redacted]"
+      },
+      "opportunity_brief_contract": {
+        "selected_opportunities_tested": 5,
+        "required_fields_per_opportunity": 4,
+        "fields": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "status": "passed"
+      },
+      "reviewer_context_contract": {
+        "product_operations_operating_loop": "[redacted]",
+        "portfolio_business_cases": 5,
+        "architecture_choices_explained": 6,
+        "monitoring_cadences": 3,
+        "cost_mechanisms": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "signal_adjacent_palette": "[redacted]",
+        "candidate_created_disclaimer": "[redacted]",
+        "status": "passed"
+      },
+      "fallbacks": {
+        "reduced_motion": "[redacted]",
+        "static_svg": "[redacted]",
+        "javascript_disabled": "[redacted]",
+        "javascript_disabled_scene_count": 15
+      }
+    },
+    "pdf": {
+      "path": "[redacted]",
+      "bytes": 1606202,
+      "sha256": "[redacted]",
+      "page_count": 15,
+      "page_size_points": "[redacted]",
+      "tagged": true,
+      "encrypted": false,
+      "embedded_javascript": false,
+      "render_dpi": 120,
+      "rendered_page_count": 15,
+      "visual_inspection": "[redacted]",
+      "clipped_critical_content_count": 0,
+      "full_five_opportunity_matrix": "[redacted]"
+    },
+    "notes": [
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]"
+    ]
+  }
+}

@@ -4,9 +4,9 @@
 **/.env
 !**/.env.example
 !.env.example
-local development instructions/settings.local.json
+.claude/settings.local.json
 runtime/.owner.env
-runtime/.n8n-mcp.env
+runtime/.n8n-api.env
 
 # Runtime state and sensitive exports
 runtime/backups/

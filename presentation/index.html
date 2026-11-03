@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A synthetic human-reviewed product-signal workflow portfolio briefing.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'">
+<title>Product Signal Control Tower — Portfolio Briefing</title>
+<style>
+:root{font:18px/1.5 system-ui,sans-serif;color:#172433;background:#f4f7f8}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:1100px;margin:auto;padding:1rem 1.5rem}header{display:flex;justify-content:space-between;gap:1rem;align-items:center}main{min-height:70vh}.slide{background:#fff;border:1px solid #d7e1e4;border-radius:18px;padding:clamp(1.4rem,4vw,3rem);box-shadow:0 8px 28px #1122330d}.slide[hidden]{display:none}h1,h2{line-height:1.12;letter-spacing:-.025em}h1{font-size:clamp(2.2rem,5vw,4rem);max-width:15ch}h2{font-size:clamp(1.8rem,3vw,2.8rem)}p,li{max-width:75ch}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#226b68}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.card{padding:1rem;border-radius:12px;background:#eff6f5;border:1px solid #d7e8e5}.note{border-left:4px solid #c77d1c;padding:.4rem 1rem;background:#fff8e9}nav{display:flex;align-items:center;gap:.75rem}button{border:0;border-radius:8px;padding:.7rem 1rem;background:#185a58;color:white;font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:default}a{color:#165f5c}footer{color:#53636c;font-size:.85rem}@media print{.slide[hidden]{display:block}header nav{display:none}.slide{break-after:page;box-shadow:none;margin-bottom:1rem}}
+</style>
+</head>
+<body>
+<header><strong>Product Signal Control Tower</strong><nav aria-label="Presentation navigation"><button id="previous" type="button">Previous</button><span id="progress" aria-live="polite"></span><button id="next" type="button">Next</button></nav></header>
+<main>
+<section class="slide"><p class="eyebrow">Synthetic portfolio prototype</p><h1>Evidence before automation.</h1><p>A human-reviewed n8n workflow turns product signals into a structured, evidence-backed brief and a recorded decision.</p><p><a href="../README.md">Read the project documentation</a></p></section>
+<section class="slide"><p class="eyebrow">Architecture</p><h2>Two model calls, one accountable decision.</h2><div class="grid"><div class="card"><strong>1. Intake and minimize</strong><p>Normalize the signal, limit personal data, and detect exact replays.</p></div><div class="card"><strong>2. Extract and ground</strong><p>Validate structured extraction, retrieve reviewed evidence, then draft a brief.</p></div><div class="card"><strong>3. Review and route</strong><p>Pause for a human decision; persist the decision and route an approved artifact to an outbox.</p></div></div><p>PostgreSQL includes pgvector schema support; OpenTelemetry and Jaeger support traces. Retrieval quality has not been evaluated here.</p></section>
+<section class="slide"><p class="eyebrow">Controls</p><h2>Design for failure as well as flow.</h2><ul><li>Validate model output and degrade safely when a response is unavailable or malformed.</li><li>Use replay checks to reduce duplicate processing.</li><li>Keep model evidence separate from human approval and downstream actions.</li><li>Sanitize unexpected errors and use synthetic inputs for demonstration.</li></ul><p class="note"><strong>Local demo boundary:</strong> the review wait link has no incoming authentication. Anyone with the link can act; add authentication, authorization and network controls before a real deployment.</p></section>
+<section class="slide"><p class="eyebrow">Evaluation</p><h2>Twenty-one defined gates.</h2><p>The gate matrix describes an evaluation plan. It is not evidence that all 21 gates passed end to end.</p><p>Historical synthetic source-run captures report 16 of 16 operational cases and 109 of 135 model-label fields matching expectations. Those results predate this sanitized build; vector similarity quality was not evaluated.</p><p><a href="../evaluation/evaluation-matrix.md">Open the current gate matrix</a> · <a href="../evaluation/historical/synthetic-captures.json">Historical redacted evidence</a></p></section>
+<section class="slide"><p class="eyebrow">Browser evidence</p><h2>Preserve the failure, too.</h2><p>An earlier synthetic headless capture reported four passing scenarios. A later headed capture reported failures in the reject and approve scenarios at the wait/resume trace-link check.</p><p>These are edited historical source-run records, not results from the current repository. A later isolated rehearsal of the sanitized build passed the four browser scenarios with a local model mock; it did not run the full 21 gates or a real provider. See the dated artifacts for details.</p></section>
+<section class="slide"><p class="eyebrow">Scope</p><h2>Prototype, not production.</h2><div class="grid"><div class="card"><strong>What is present</strong><p>Importable workflows, SQL, local runtime tooling, synthetic fixtures, tests and a 21-gate plan.</p></div><div class="card"><strong>What needs further work</strong><p>Production access controls, deployment review, real-world validation, and a complete gate-by-gate execution.</p></div></div></section>
+</main>
+<footer>Use the buttons or left/right arrow keys to navigate. This standalone briefing loads no external assets.</footer>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const previous = document.getElementById('previous');
+  const next = document.getElementById('next');
+  const progress = document.getElementById('progress');
+  let index = 0;
+  function show(nextIndex) {
+    index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+    slides.forEach((slide, position) => { slide.hidden = position !== index; });
+    previous.disabled = index === 0; next.disabled = index === slides.length - 1;
+    progress.textContent = `${index + 1} / ${slides.length}`;
+  }
+  previous.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') show(index + 1);
+    else if (event.key === 'ArrowLeft') show(index - 1);
+    else if (event.key === 'Home') show(0);
+    else if (event.key === 'End') show(slides.length - 1);
+  });
+  show(0);
+})();
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@ $composeFiles = @(
 )
 
 & docker compose `
-    --project-name signal-ai-demo `
+    --project-name product-signal-control-tower `
     --env-file (Join-Path $runtimeRoot '.env') `
     @composeFiles `
     up --detach --wait

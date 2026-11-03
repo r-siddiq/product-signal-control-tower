@@ -12,7 +12,7 @@ const golden = JSON.parse(
 );
 const workflow = JSON.parse(
   readFileSync(
-    resolve(projectRoot, 'workflows', 'signal-product-signal-control-tower.json'),
+    resolve(projectRoot, 'workflows', 'product-signal-control-tower.json'),
     'utf8',
   ),
 );

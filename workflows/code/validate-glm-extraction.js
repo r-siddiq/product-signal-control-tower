@@ -4,8 +4,8 @@ const intake = $('Claim Event and Check Replay').first().json;
 
 const allowed = {
   product_family: new Set([
-    'municipal_websites', 'agenda_and_meeting', 'see_click_fix', 'signal_agent',
-    'signal_athena', 'community_development', 'recreation_management',
+    'municipal_websites', 'agenda_and_meeting', 'resident_request_tracking', 'signal_agent',
+    'analytics_assistant', 'community_development', 'recreation_management',
     'public_safety', 'records_and_documents', 'mass_notification',
     'web_accessibility', 'process_automation', 'unknown',
   ]),

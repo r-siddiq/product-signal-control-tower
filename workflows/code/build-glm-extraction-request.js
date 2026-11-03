@@ -4,9 +4,9 @@ const controlledTaxonomy = {
   product_family: [
     'municipal_websites',
     'agenda_and_meeting',
-    'see_click_fix',
+    'resident_request_tracking',
     'signal_agent',
-    'signal_athena',
+    'analytics_assistant',
     'community_development',
     'recreation_management',
     'public_safety',

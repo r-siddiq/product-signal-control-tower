@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A self-contained, synthetic walkthrough of a human-reviewed product signal workflow.">
+  <title>Product Signal Control Tower — Project Walkthrough</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#deck">Skip to the presentation</a>
+  <div class="frame">
+    <aside class="rail" aria-label="Presentation navigation">
+      <div class="wordmark" aria-hidden="true"><span class="mark">PS</span><span class="wordmark-text">SIGNAL<br>CONTROL</span></div>
+      <p class="rail-caption">PROJECT TOUR</p>
+      <nav id="slide-nav" class="slide-nav" aria-label="Slides"></nav>
+      <div class="rail-foot"><span class="pulse-dot"></span><span>SYNTHETIC<br>WALKTHROUGH</span></div>
+    </aside>
+
+    <main id="deck" class="deck-shell" tabindex="-1">
+      <header class="topbar">
+        <div class="topbar-label"><span class="pulse-dot"></span><span>PRODUCT SIGNAL CONTROL TOWER</span></div>
+        <div class="topbar-meta"><span>INTERACTIVE OVERVIEW</span><span id="slide-count">01 / 09</span></div>
+      </header>
+
+      <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+
+      <section class="slides" aria-live="polite" aria-atomic="true">
+        <article class="slide slide-cover is-active" data-title="Overview" aria-labelledby="title-overview">
+          <div class="cover-orbit orbit-one" aria-hidden="true"></div>
+          <div class="cover-orbit orbit-two" aria-hidden="true"></div>
+          <div class="cover-content">
+            <p class="eyebrow"><span class="eyebrow-dot"></span>HUMAN-REVIEWED LLM WORKFLOW</p>
+            <h1 id="title-overview">Product signals,<br><span>with a human in control.</span></h1>
+            <p class="cover-lede">A synthetic workflow that turns scattered product feedback into structured evidence, a reviewable brief, and an explicit human decision.</p>
+            <div class="tech-pills" aria-label="Technology">
+              <span>n8n</span><span>PostgreSQL</span><span>pgvector</span><span>OpenTelemetry</span><span>Playwright</span>
+            </div>
+            <div class="cover-bottom"><span>AN ENGINEERING PROJECT OVERVIEW</span><span>01 — 10</span></div>
+          </div>
+          <div class="cover-art" aria-hidden="true">
+            <svg viewBox="0 0 520 520" role="presentation">
+              <defs><linearGradient id="orb" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d8f978"/><stop offset="1" stop-color="#9fdc94"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#172c33" flood-opacity=".16"/></filter></defs>
+              <circle cx="260" cy="260" r="205" fill="none" stroke="#28444b" stroke-opacity=".14" stroke-width="1.5" stroke-dasharray="5 9"/>
+              <circle cx="260" cy="260" r="152" fill="none" stroke="#28444b" stroke-opacity=".18" stroke-width="1.5"/>
+              <path d="M110 260h300M260 110v300" stroke="#28444b" stroke-opacity=".12" stroke-width="1"/>
+              <g filter="url(#shadow)"><rect x="154" y="148" width="212" height="218" rx="34" fill="url(#orb)"/><path d="M205 263h110M260 208v110" stroke="#193339" stroke-width="9" stroke-linecap="round"/><circle cx="260" cy="263" r="43" fill="none" stroke="#193339" stroke-opacity=".25" stroke-width="2"/></g>
+              <circle cx="125" cy="151" r="11" fill="#f18d68"/><circle cx="403" cy="169" r="8" fill="#193339"/><circle cx="111" cy="362" r="7" fill="#a3b9ac"/><circle cx="395" cy="369" r="12" fill="#f0c865"/>
+              <path d="M136 153l45 19M386 173l-34 25M123 356l49-36M383 365l-36-34" stroke="#28444b" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 5"/>
+            </svg>
+            <div class="orbit-tag tag-top"><span class="mini-dot mint"></span>STRUCTURED SIGNAL</div>
+            <div class="orbit-tag tag-bottom"><span class="mini-dot coral"></span>HUMAN DECISION</div>
+          </div>
+        </article>
+
+        <article class="slide" data-title="The problem" aria-labelledby="title-problem" hidden>
+          <div class="slide-heading"><p class="eyebrow">01 / THE PROBLEM</p><h2 id="title-problem">Feedback is plentiful.<br><span>Decision-ready evidence is not.</span></h2><p class="section-intro">Product signals arrive in different shapes and levels of detail. This workflow makes them comparable while keeping the source and review decision visible.</p></div>
+          <div class="problem-grid">
+            <div class="source-stack">
+              <div class="source-card"><span class="source-icon icon-chat">“</span><div><small>SOURCE 01</small><strong>Feedback note</strong></div><span class="source-tail">TEXT</span></div>
+              <div class="source-card source-card-offset"><span class="source-icon icon-bars"><i></i><i></i><i></i></span><div><small>SOURCE 02</small><strong>Support theme</strong></div><span class="source-tail">PATTERN</span></div>
+              <div class="source-card"><span class="source-icon icon-spark">✳</span><div><small>SOURCE 03</small><strong>Usage observation</strong></div><span class="source-tail">EVENT</span></div>
+            </div>
+            <div class="problem-arrow" aria-hidden="true"><span>→</span></div>
+            <div class="problem-destination"><div class="destination-ring"><span class="destination-dot"></span><span class="destination-dot"></span><span class="destination-dot"></span><b>?</b></div><p>One reviewed<br>product signal</p></div>
+          </div>
+          <div class="takeaway"><span class="takeaway-mark">01</span><p>The system structures evidence and highlights uncertainty; <strong>it does not choose the product decision.</strong></p></div>
+        </article>
+
+        <article class="slide" data-title="Architecture" aria-labelledby="title-architecture" hidden>
+          <div class="slide-heading"><p class="eyebrow">02 / ARCHITECTURE</p><h2 id="title-architecture">A traceable path from<br><span>intake to review.</span></h2><p class="section-intro">n8n coordinates the steps. PostgreSQL holds the workflow state and review outcome; traces make the path inspectable.</p></div>
+          <div class="architecture-board">
+            <div class="arch-flow" aria-label="Workflow stages">
+              <div class="arch-node"><span class="node-icon intake">IN</span><small>01 · RECEIVE</small><strong>Signal<br>intake</strong></div><span class="arch-link" aria-hidden="true"></span>
+              <div class="arch-node"><span class="node-icon transform">≋</span><small>02 · PREPARE</small><strong>Normalize<br>&amp; minimize</strong></div><span class="arch-link" aria-hidden="true"></span>
+              <div class="arch-node node-accent"><span class="node-icon model">✳</span><small>03 · STRUCTURE</small><strong>Extract<br>&amp; validate</strong></div><span class="arch-link" aria-hidden="true"></span>
+              <div class="arch-node"><span class="node-icon data">DB</span><small>04 · STORE</small><strong>Evidence<br>record</strong></div><span class="arch-link" aria-hidden="true"></span>
+              <div class="arch-node node-review"><span class="node-icon human">H</span><small>05 · DECIDE</small><strong>Human<br>review</strong></div>
+            </div>
+            <div class="arch-support"><span class="support-rail"></span><div class="support-label"><span class="support-symbol">↗</span><div><small>OBSERVE</small><strong>OpenTelemetry → Jaeger</strong></div><span class="support-caption">TRACE SPANS</span></div><div class="support-label"><span class="support-symbol support-pg">PG</span><div><small>PERSIST</small><strong>PostgreSQL + pgvector schema</strong></div><span class="support-caption">STATE &amp; VECTORS</span></div></div>
+            <div class="arch-error"><span class="error-dot"></span><span>Errors route through a separate sanitized handler.</span></div>
+          </div>
+          <p class="diagram-note"><span class="note-dash"></span>Illustrative system view · pgvector retrieval quality has not been evaluated.</p>
+        </article>
+
+        <article class="slide" data-title="Workflow" aria-labelledby="title-workflow" hidden>
+          <div class="slide-heading"><p class="eyebrow">03 / ORCHESTRATION</p><h2 id="title-workflow">Two focused model calls.<br><span>One reviewable result.</span></h2><p class="section-intro">The workflow separates signal extraction from evidence-brief generation, with schema checks and replay protection around the model steps.</p></div>
+          <div class="workflow-lanes">
+            <div class="workflow-lane"><span class="lane-index">01</span><div class="lane-body"><div class="lane-label"><small>CALL ONE · SYNTHETIC INPUT</small><h3>Extract the signal</h3></div><div class="lane-detail"><div class="lane-input"><span>RAW FEEDBACK</span><div class="fake-lines"><i></i><i></i><i></i></div></div><span class="mini-arrow">→</span><div class="lane-output"><span>VALIDATED FIELDS</span><div class="field-list"><b>theme</b><b>sentiment</b><b>evidence</b></div></div></div></div><span class="lane-status status-green"><i></i>SCHEMA CHECK</span></div>
+            <div class="lane-connector"><span></span><small>REPLAY KEY + EVENT ID</small><span></span></div>
+            <div class="workflow-lane"><span class="lane-index">02</span><div class="lane-body"><div class="lane-label"><small>CALL TWO · EVIDENCE CONTEXT</small><h3>Build a concise brief</h3></div><div class="lane-detail"><div class="brief-sheet"><span>PRODUCT SIGNAL BRIEF</span><i></i><i></i><i class="brief-short"></i><div class="brief-tag">SOURCE-LINKED</div></div><div class="brief-points"><span><i>01</i> Summary</span><span><i>02</i> Supporting evidence</span><span><i>03</i> Uncertainty</span></div></div></div><span class="lane-status status-amber"><i></i>HUMAN GATE</span></div>
+          </div>
+          <div class="workflow-foot"><span class="check-shape">✓</span><p>Model output stays reviewable; the workflow preserves provenance and waits for an explicit decision.</p><span class="foot-token">NO AUTO-ROUTING</span></div>
+        </article>
+
+        <article class="slide" data-title="Human review" aria-labelledby="title-review" hidden>
+          <div class="slide-heading"><p class="eyebrow">04 / HUMAN REVIEW</p><h2 id="title-review">A person owns the<br><span>last decision.</span></h2><p class="section-intro">Try the local illustration below. The buttons change this page only; they do not call a provider, workflow, database, or service.</p></div>
+          <div class="review-demo">
+            <div class="review-inbox"><div class="inbox-head"><span>REVIEW QUEUE</span><span class="queue-count">02 <i>ITEMS</i></span></div>
+              <button class="signal-row is-selected" type="button" data-signal="signal-a" aria-pressed="true"><span class="signal-num">01</span><span class="signal-content"><strong>Flexible pickup window</strong><small>SYNTHETIC FEEDBACK · OPERATIONS</small></span><span class="signal-priority priority-high">HIGH</span></button>
+              <button class="signal-row" type="button" data-signal="signal-b" aria-pressed="false"><span class="signal-num">02</span><span class="signal-content"><strong>Clearer item comparison</strong><small>SYNTHETIC FEEDBACK · DISCOVERY</small></span><span class="signal-priority priority-mid">MED</span></button>
+              <div class="inbox-foot"><span class="mini-dot mint"></span><span>LOCAL ILLUSTRATION · SYNTHETIC RECORDS</span></div>
+            </div>
+            <div class="review-card" id="review-card" aria-live="polite"><div class="review-card-top"><span class="review-state"><i></i><span id="decision-state">AWAITING REVIEW</span></span><span class="review-ref" id="signal-ref">SIGNAL / 01</span></div><h3 id="signal-title">Flexible pickup window</h3><p id="signal-summary">Sample feedback suggests the pickup cutoff is useful; the supporting note asks for clearer timing near closing.</p><div class="evidence-quote"><span>“</span><p id="signal-quote">A fictional example of a source-linked observation, shown for this presentation only.</p></div><div class="review-actions"><button class="decision-btn approve-btn" type="button" data-decision="approved"><span>✓</span>Approve</button><button class="decision-btn reject-btn" type="button" data-decision="rejected"><span>×</span>Reject</button></div><p class="decision-note" id="decision-note">The decision is held in page memory until you leave or reset this example.</p></div>
+          </div>
+        </article>
+
+        <article class="slide" data-title="Data & safeguards" aria-labelledby="title-data" hidden>
+          <div class="slide-heading"><p class="eyebrow">05 / DATA &amp; SAFEGUARDS</p><h2 id="title-data">Keep evidence connected.<br><span>Minimize what moves.</span></h2><p class="section-intro">The workflow treats each signal as a traceable record and limits the model request to the fields needed for analysis.</p></div>
+          <div class="data-layout">
+            <div class="data-flow"><div class="data-step"><span class="data-icon icon-filter">⌁</span><div><small>BEFORE THE MODEL</small><strong>Normalize, redact, validate input</strong></div></div><span class="data-stem"></span><div class="data-step"><span class="data-icon icon-stack">▤</span><div><small>AFTER EXTRACTION</small><strong>Store source, fields and evidence links</strong></div></div><span class="data-stem"></span><div class="data-step"><span class="data-icon icon-lock">◇</span><div><small>BEFORE ROUTING</small><strong>Wait for an explicit reviewer decision</strong></div></div></div>
+            <div class="record-card"><div class="record-head"><span>SYNTHETIC RECORD</span><span class="record-state">SCHEMA-VALIDATED</span></div><div class="record-rows"><div><small>signal_id</small><code>sample-0042</code></div><div><small>theme</small><code>pickup_timing</code></div><div><small>evidence_count</small><code>2 linked notes</code></div><div><small>review_state</small><code class="review-wait">awaiting_human</code></div></div><div class="record-foot"><span>PostgreSQL</span><i>+</i><span>pgvector schema</span></div></div>
+          </div>
+          <div class="micro-note"><span>↳</span>Idempotency guards prevent repeated event IDs from creating duplicate decisions.</div>
+        </article>
+
+        <article class="slide" data-title="Observability" aria-labelledby="title-observe" hidden>
+          <div class="slide-heading"><p class="eyebrow">06 / OBSERVABILITY</p><h2 id="title-observe">Follow a signal<br><span>through the workflow.</span></h2><p class="section-intro">OpenTelemetry traces expose the sequence and handoffs so operators can inspect the path around model and review steps.</p></div>
+          <div class="trace-board"><div class="trace-heading"><div><small>ILLUSTRATIVE TRACE</small><strong>signal.process</strong></div><span class="trace-local"><i></i>EXAMPLE VIEW</span></div><div class="trace-row"><span class="trace-step">01</span><div class="trace-label"><strong>intake.receive</strong><small>workflow entry</small></div><div class="trace-barbar"><span style="--w:95%"></span></div><span class="trace-kind">N8N</span></div><div class="trace-row"><span class="trace-step">02</span><div class="trace-label"><strong>signal.normalize</strong><small>minimize + validate</small></div><div class="trace-barbar"><span style="--w:74%"></span></div><span class="trace-kind">CODE</span></div><div class="trace-row"><span class="trace-step">03</span><div class="trace-label"><strong>signal.extract</strong><small>structured model output</small></div><div class="trace-barbar"><span style="--w:86%"></span></div><span class="trace-kind">LLM</span></div><div class="trace-row"><span class="trace-step">04</span><div class="trace-label"><strong>brief.prepare</strong><small>evidence-linked summary</small></div><div class="trace-barbar"><span style="--w:64%"></span></div><span class="trace-kind">N8N</span></div><div class="trace-row trace-human"><span class="trace-step">05</span><div class="trace-label"><strong>review.wait</strong><small>human approval boundary</small></div><div class="trace-barbar"><span style="--w:100%"></span></div><span class="trace-kind">HUMAN</span></div><div class="trace-footer"><span>Spans are illustrative; no timings or live trace data are shown.</span><span>OpenTelemetry → Jaeger</span></div></div>
+          <div class="observe-note"><span class="observe-mark">i</span><p>Traces help explain where a result came from; they do not certify the model’s answer.</p></div>
+        </article>
+
+        <article class="slide" data-title="Evaluation" aria-labelledby="title-evaluation" hidden>
+          <div class="slide-heading"><p class="eyebrow">07 / EVALUATION</p><h2 id="title-evaluation">Measure the parts.<br><span>Keep claims scoped.</span></h2><p class="section-intro">The evaluation matrix organizes mixed checks across contracts, workflow safety, operations, and browser decisions.</p></div>
+          <div class="evaluation-layout"><div class="gate-panel"><div class="gate-number">21</div><div class="gate-copy"><small>GATES IN THE MATRIX</small><h3>Evaluation plan</h3><p>Static checks, manual review, focused runtime probes, and browser scenarios are separate kinds of evidence.</p></div><div class="gate-grid" aria-label="Twenty-one planned evaluation gates"></div><span class="gate-key"><i></i>PLANNED CHECK</span></div><div class="scenario-panel"><div class="scenario-head"><span>PLAYWRIGHT · LOCAL MOCK</span><b>4 / 4</b></div><div class="scenario-result"><span class="result-check">✓</span><div><strong>Invalid input</strong><small>Rejected at the contract boundary</small></div><span class="result-pass">PASS</span></div><div class="scenario-result"><span class="result-check">✓</span><div><strong>Replay</strong><small>Duplicate event remains idempotent</small></div><span class="result-pass">PASS</span></div><div class="scenario-result"><span class="result-check">✓</span><div><strong>Human rejection</strong><small>Decision recorded without routing</small></div><span class="result-pass">PASS</span></div><div class="scenario-result"><span class="result-check">✓</span><div><strong>Human approval</strong><small>Review path completes as expected</small></div><span class="result-pass">PASS</span></div><p class="scenario-foot">Synthetic records · local structured mock · no real provider calls</p></div></div>
+          <p class="matrix-note">The 21 gates are an evaluation plan with mixed evidence; these four Playwright scenarios passed against a local mock.</p>
+        </article>
+
+        <article class="slide" data-title="Scope & next work" aria-labelledby="title-scope" hidden>
+          <div class="slide-heading"><p class="eyebrow">08 / SCOPE &amp; NEXT WORK</p><h2 id="title-scope">A prototype with<br><span>clear boundaries.</span></h2><p class="section-intro">The project makes workflow behavior inspectable and testable with synthetic data; it does not claim production readiness or retrieval quality.</p></div>
+          <div class="scope-grid"><div class="scope-card scope-ready"><span class="scope-icon">✓</span><small>IMPLEMENTED &amp; CHECKED</small><h3>Workflow safeguards</h3><ul><li>Schema-validated extraction</li><li>Replay protection and review gate</li><li>Isolated mock browser scenarios</li><li>Trace instrumentation</li></ul></div><div class="scope-card scope-open"><span class="scope-icon">↗</span><small>OPEN EVALUATION WORK</small><h3>Questions still to test</h3><ul><li>Retrieval quality against a judged set</li><li>Provider quality across representative inputs</li><li>Operational resilience at realistic volume</li><li>Deployment access control and runbook review</li></ul></div></div>
+          <div class="scope-footer"><span class="scope-line"></span><p>Reviewable automation should make it clear what it knows, what it cannot validate, and where a person decides.</p></div>
+        </article>
+
+        <article class="slide slide-close" data-title="End" aria-labelledby="title-end" hidden>
+          <div class="close-orbit close-one" aria-hidden="true"></div><div class="close-orbit close-two" aria-hidden="true"></div>
+          <div class="close-content"><p class="eyebrow"><span class="eyebrow-dot"></span>PRODUCT SIGNAL CONTROL TOWER</p><h2 id="title-end">Structured signal.<br>Visible evidence.<br><span>Human decision.</span></h2><p class="close-lede">A small, inspectable path from feedback to action—with synthetic data, tested boundaries, and honest limits.</p><div class="close-pills"><span>n8n</span><span>PostgreSQL + pgvector</span><span>OpenTelemetry</span><span>Playwright</span></div><p class="close-foot">INTERACTIVE PROJECT OVERVIEW <span>·</span> 10 / 10</p></div>
+          <div class="close-mark" aria-hidden="true"><span>PS</span><i></i><i></i><i></i></div>
+        </article>
+      </section>
+
+      <footer class="controls"><button id="prev-slide" class="nav-button" type="button" aria-label="Previous slide" disabled><span aria-hidden="true">←</span><span class="button-wide">BACK</span></button><div class="control-hint"><kbd>←</kbd><kbd>→</kbd><span>TO NAVIGATE</span></div><button id="next-slide" class="nav-button nav-next" type="button" aria-label="Next slide"><span class="button-wide">NEXT</span><span aria-hidden="true">→</span></button></footer>
+      <div id="live-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    </main>
+  </div>
+</body>
+</html>

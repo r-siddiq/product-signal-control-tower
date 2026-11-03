@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normalizeApiBase, secureN8nFetch } from './lib/import-options.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const workflowName = 'Product Signal Control Tower';
@@ -63,10 +64,10 @@ const sleep = (milliseconds) => new Promise((resolvePromise) => {
 
 const arguments_ = parseArguments(process.argv.slice(2));
 const n8nEnv = {
-  ...parseEnv(resolve(projectRoot, 'runtime', '.n8n-mcp.env')),
+  ...parseEnv(resolve(projectRoot, 'runtime', '.n8n-api.env')),
   ...process.env,
 };
-const apiBase = n8nEnv.N8N_API_URL?.replace(/\/$/, '');
+const apiBase = n8nEnv.N8N_API_URL ? normalizeApiBase(n8nEnv.N8N_API_URL) : '';
 const n8nCredential = n8nEnv.N8N_API_KEY;
 assert(apiBase && n8nCredential, 'The local n8n API URL/key is unavailable.');
 
@@ -90,9 +91,7 @@ if (arguments_.cases) {
 
 async function n8nApi(path, { includeData = false } = {}) {
   const suffix = includeData ? `${path.includes('?') ? '&' : '?'}includeData=true` : '';
-  const response = await fetch(`${apiBase}${path}${suffix}`, {
-    headers: { 'X-N8N-API-KEY': n8nCredential },
-  });
+  const response = await secureN8nFetch(`${apiBase}${path}${suffix}`, n8nCredential);
   if (!response.ok) {
     const error = new Error(`n8n API request failed with HTTP ${response.status}.`);
     error.status = response.status;

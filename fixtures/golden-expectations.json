@@ -199,7 +199,7 @@
       },
       "acceptable_model_labels": {
         "product_family": [
-          "signal_athena"
+          "analytics_assistant"
         ],
         "intelligence_capability": [
           "staff_qa"
@@ -229,7 +229,7 @@
         ]
       },
       "forbidden_claims_or_actions": [
-        "Do not relabel Signal Athena as Signal Agent.",
+        "Do not relabel Analytics Assistant as Signal Agent.",
         "Do not treat a policy report as verified.",
         "Do not lose the staff and clerk audience distinction."
       ],
@@ -444,7 +444,7 @@
       },
       "acceptable_model_labels": {
         "product_family": [
-          "see_click_fix"
+          "resident_request_tracking"
         ],
         "intelligence_capability": [
           "category_search"
@@ -525,7 +525,7 @@
       },
       "acceptable_model_labels": {
         "product_family": [
-          "see_click_fix"
+          "resident_request_tracking"
         ],
         "intelligence_capability": [
           "photo_analysis"
@@ -1181,7 +1181,7 @@
       },
       "acceptable_model_labels": {
         "product_family": [
-          "signal_athena"
+          "analytics_assistant"
         ],
         "intelligence_capability": [
           "staff_qa"

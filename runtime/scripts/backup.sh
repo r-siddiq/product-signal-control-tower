@@ -4,7 +4,7 @@ set -eu
 SCRIPT_DIR=$(CDPATH= cd -P "$(dirname "$0")" && pwd)
 RUNTIME_ROOT=$(CDPATH= cd -P "${SCRIPT_DIR}/.." && pwd)
 WORKSPACE_ROOT=$(CDPATH= cd -P "${RUNTIME_ROOT}/.." && pwd)
-PROJECT_NAME=signal-ai-demo
+PROJECT_NAME=product-signal-control-tower
 ENV_FILE="${RUNTIME_ROOT}/.env"
 COMPOSE_FILE="${RUNTIME_ROOT}/compose.yaml"
 GITIGNORE_FILE="${WORKSPACE_ROOT}/.gitignore"

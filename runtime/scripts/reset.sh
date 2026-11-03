@@ -3,7 +3,7 @@ set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -P "$(dirname "$0")" && pwd)
 RUNTIME_ROOT=$(CDPATH= cd -P "${SCRIPT_DIR}/.." && pwd)
-PROJECT_NAME=signal-ai-demo
+PROJECT_NAME=product-signal-control-tower
 ENV_FILE="${RUNTIME_ROOT}/.env"
 COMPOSE_FILE="${RUNTIME_ROOT}/compose.yaml"
 REQUIRED_TOKEN=RESET-SIGNAL-AI-DEMO
@@ -13,8 +13,8 @@ printf '%s\n' \
   "  Project: ${PROJECT_NAME}" \
   '  Services: n8n, postgres' \
   '  Volumes:' \
-  '    signal-ai-demo_n8n_data' \
-  '    signal-ai-demo_postgres_data'
+  '    product-signal-control-tower_n8n_data' \
+  '    product-signal-control-tower_postgres_data'
 
 if [ "$#" -ne 1 ] ||
   [ "$1" != '--remove-volumes' ] ||

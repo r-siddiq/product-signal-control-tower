@@ -1,6 +1,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { normalizeApiBase, secureN8nFetch } from './import-options.mjs';
 
 export const WORKFLOW_NAME = 'Product Signal Control Tower';
 export const EXTRACTION_NODE = 'Extract Controlled Signal with GLM-5.2';
@@ -49,11 +50,11 @@ export function safeSourceIdentifier(value) {
 
 export function localRuntimeConfig(projectRoot) {
   const n8n = {
-    ...parseEnvFile(resolve(projectRoot, 'runtime', '.n8n-mcp.env')),
+    ...parseEnvFile(resolve(projectRoot, 'runtime', '.n8n-api.env')),
     ...process.env,
   };
   const owner = parseEnvFile(resolve(projectRoot, 'runtime', '.owner.env'));
-  const apiBase = n8n.N8N_API_URL?.replace(/\/$/, '');
+  const apiBase = n8n.N8N_API_URL ? normalizeApiBase(n8n.N8N_API_URL, { loopbackOnly: true }) : '';
   assert(apiBase === 'http://127.0.0.1:5678', 'The demo only permits loopback n8n at http://127.0.0.1:5678.');
   assert(n8n.N8N_API_KEY, 'The ignored local n8n API key is unavailable.');
   return {
@@ -67,9 +68,7 @@ export function localRuntimeConfig(projectRoot) {
 export function createN8nClient(config) {
   const request = async (path, { includeData = false } = {}) => {
     const suffix = includeData ? `${path.includes('?') ? '&' : '?'}includeData=true` : '';
-    const response = await fetch(`${config.apiBase}${path}${suffix}`, {
-      headers: { 'X-N8N-API-KEY': config.authorization },
-    });
+    const response = await secureN8nFetch(`${config.apiBase}${path}${suffix}`, config.authorization);
     if (!response.ok) {
       const error = new Error(`n8n API request failed with HTTP ${response.status}.`);
       error.status = response.status;

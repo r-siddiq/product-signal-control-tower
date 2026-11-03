@@ -4,7 +4,7 @@ set -eu
 runtime_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 
 docker compose \
-  --project-name signal-ai-demo \
+  --project-name product-signal-control-tower \
   --env-file "${runtime_root}/.env" \
   -f "${runtime_root}/compose.yaml" \
   -f "${runtime_root}/compose.otel.yaml" \

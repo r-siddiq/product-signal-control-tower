@@ -1,0 +1,3485 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "3.0.0",
+    "synthetic": true,
+    "status": "provider_backed_operational_acceptance_passed",
+    "captured_at": "2026-07-30T20:23:09.248Z",
+    "run_label": "[redacted]",
+    "workflow_contract": {
+      "functional_nodes": 20,
+      "model_calls_per_new_signal": 2,
+      "human_review_checkpoints_per_new_signal": 1,
+      "visible_intake_fields": 3
+    },
+    "provider": {
+      "name": "[redacted]",
+      "endpoint_class": "[redacted]",
+      "model": "glm-5.2",
+      "credential_storage": "[redacted]",
+      "embedding_model_available": false,
+      "demo_only": true
+    },
+    "evidence_strategy": {
+      "transactional_store": "[redacted]",
+      "selection_and_synthesis": "[redacted]",
+      "vector_similarity_claimed": false,
+      "pgvector_status": "[redacted]"
+    },
+    "aggregate": {
+      "cases_captured": 16,
+      "operational_cases_passed": 16,
+      "provider_calls": 30,
+      "prompt_tokens": 28550,
+      "completion_tokens": 9565,
+      "model_label_fields_passed": 109,
+      "model_label_fields_total": 135,
+      "model_label_agreement": 0.8074,
+      "evidence_cases_evaluated": 14,
+      "evidence_expected_neighbor_cases_passed": 14,
+      "evidence_expected_neighbor_case_rate": 1,
+      "real_external_actions": 0,
+      "fabricated_vector_scores": 0
+    },
+    "interpretation": [
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]"
+    ],
+    "cases": [
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-001",
+        "execution_id": "synthetic-id-016",
+        "source_key": "synthetic-id-001",
+        "run_source_event_id": "synthetic-id-017",
+        "execution_status": "success",
+        "duration_ms": 13076,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 729,
+          "completion_tokens": 303,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "signal_agent",
+            "intelligence_capability": "resident_qa",
+            "government_role": "unknown",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "source_freshness",
+            "trust_risk": "medium",
+            "sentiment": "neutral",
+            "urgency": "medium",
+            "customer_impact": "resident_facing"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1262,
+          "completion_tokens": 537,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "signal_agent",
+              "accepted": [
+                "signal_agent"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "resident_qa",
+              "accepted": [
+                "resident_qa"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "resident"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "data_quality",
+                "trust_and_safety"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "source_freshness",
+              "accepted": [
+                "source_freshness"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "neutral",
+              "accepted": [
+                "negative"
+              ],
+              "passed": false
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "resident_facing",
+              "accepted": [
+                "resident_facing"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 5,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-002",
+        "execution_id": "synthetic-id-018",
+        "source_key": "synthetic-id-002",
+        "run_source_event_id": "synthetic-id-019",
+        "execution_status": "success",
+        "duration_ms": 13074,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 729,
+          "completion_tokens": 290,
+          "classification_confidence": 0.88,
+          "labels": {
+            "product_family": "signal_agent",
+            "intelligence_capability": "resident_qa",
+            "government_role": "unknown",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "source_freshness",
+            "trust_risk": "medium",
+            "sentiment": "negative",
+            "urgency": "medium",
+            "customer_impact": "resident_facing"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1250,
+          "completion_tokens": 511,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "signal_agent",
+              "accepted": [
+                "signal_agent"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "resident_qa",
+              "accepted": [
+                "resident_qa"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "communications",
+                "customer_service",
+                "resident"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "data_quality",
+                "feature_request"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "source_freshness",
+              "accepted": [
+                "source_freshness",
+                "transparency"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "medium",
+                "high"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative",
+                "mixed"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "medium",
+                "high"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "resident_facing",
+              "accepted": [
+                "resident_facing"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 8,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-003",
+        "execution_id": "synthetic-id-020",
+        "source_key": "synthetic-id-003",
+        "run_source_event_id": "synthetic-id-021",
+        "execution_status": "success",
+        "duration_ms": 12321,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 739,
+          "completion_tokens": 298,
+          "classification_confidence": 0.9,
+          "labels": {
+            "product_family": "analytics_assistant",
+            "intelligence_capability": "staff_qa",
+            "government_role": "clerk",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "source_freshness",
+            "trust_risk": "medium",
+            "sentiment": "neutral",
+            "urgency": "medium",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1271,
+          "completion_tokens": 564,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "analytics_assistant",
+              "accepted": [
+                "analytics_assistant"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "staff_qa",
+              "accepted": [
+                "staff_qa"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "clerk",
+              "accepted": [
+                "clerk"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "data_quality",
+                "trust_and_safety"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "source_freshness",
+              "accepted": [
+                "source_freshness"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "neutral",
+              "accepted": [
+                "negative"
+              ],
+              "passed": false
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "single_department",
+                "multiple_departments"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 6,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-004",
+        "execution_id": "synthetic-id-022",
+        "source_key": "synthetic-id-004",
+        "run_source_event_id": "synthetic-id-023",
+        "execution_status": "success",
+        "duration_ms": 11484,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 743,
+          "completion_tokens": 236,
+          "classification_confidence": 0.9,
+          "labels": {
+            "product_family": "municipal_websites",
+            "intelligence_capability": "editing_assistant",
+            "government_role": "clerk",
+            "signal_type": "trust_and_safety",
+            "ai_feedback_type": "editing_accuracy",
+            "trust_risk": "medium",
+            "sentiment": "negative",
+            "urgency": "medium",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1267,
+          "completion_tokens": 513,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "municipal_websites",
+              "accepted": [
+                "municipal_websites"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "editing_assistant",
+              "accepted": [
+                "editing_assistant"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "clerk",
+              "accepted": [
+                "communications"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "trust_and_safety",
+              "accepted": [
+                "trust_and_safety",
+                "data_quality"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "editing_accuracy",
+              "accepted": [
+                "editing_accuracy"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "resident_facing"
+              ],
+              "passed": false
+            }
+          },
+          "model_label_fields_passed": 5,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-005",
+        "execution_id": "synthetic-id-024",
+        "source_key": "synthetic-id-005",
+        "run_source_event_id": "synthetic-id-025",
+        "execution_status": "success",
+        "duration_ms": 12173,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 728,
+          "completion_tokens": 311,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "agenda_and_meeting",
+            "intelligence_capability": "editing_assistant",
+            "government_role": "clerk",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "editing_accuracy",
+            "trust_risk": "medium",
+            "sentiment": "negative",
+            "urgency": "medium",
+            "customer_impact": "single_user"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1255,
+          "completion_tokens": 471,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "agenda_and_meeting",
+              "accepted": [
+                "agenda_and_meeting"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "editing_assistant",
+              "accepted": [
+                "editing_assistant"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "clerk",
+              "accepted": [
+                "clerk"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "trust_and_safety",
+                "data_quality"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "editing_accuracy",
+              "accepted": [
+                "editing_accuracy"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "high"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "single_user",
+              "accepted": [
+                "single_department"
+              ],
+              "passed": false
+            }
+          },
+          "model_label_fields_passed": 6,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-006",
+        "execution_id": "synthetic-id-026",
+        "source_key": "synthetic-id-006",
+        "run_source_event_id": "synthetic-id-027",
+        "execution_status": "success",
+        "duration_ms": 10555,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 736,
+          "completion_tokens": 316,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "resident_request_tracking",
+            "intelligence_capability": "category_search",
+            "government_role": "unknown",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "classification_accuracy",
+            "trust_risk": "medium",
+            "sentiment": "negative",
+            "urgency": "medium",
+            "customer_impact": "multiple_departments"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1259,
+          "completion_tokens": 501,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "resident_request_tracking",
+              "accepted": [
+                "resident_request_tracking"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "category_search",
+              "accepted": [
+                "category_search"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "public_safety",
+                "customer_service"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "data_quality",
+                "workflow_gap"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "classification_accuracy",
+              "accepted": [
+                "classification_accuracy"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "medium"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "medium",
+                "high"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "multiple_departments",
+              "accepted": [
+                "single_department"
+              ],
+              "passed": false
+            }
+          },
+          "model_label_fields_passed": 7,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-007",
+        "execution_id": "synthetic-id-028",
+        "source_key": "synthetic-id-007",
+        "run_source_event_id": "synthetic-id-029",
+        "execution_status": "success",
+        "duration_ms": 8993,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 738,
+          "completion_tokens": 203,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "resident_request_tracking",
+            "intelligence_capability": "photo_analysis",
+            "government_role": "unknown",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "classification_accuracy",
+            "trust_risk": "low",
+            "sentiment": "negative",
+            "urgency": "low",
+            "customer_impact": "single_user"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1244,
+          "completion_tokens": 350,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "resident_request_tracking",
+              "accepted": [
+                "resident_request_tracking"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "photo_analysis",
+              "accepted": [
+                "photo_analysis"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "public_safety",
+                "customer_service"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "data_quality",
+                "workflow_gap"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "classification_accuracy",
+              "accepted": [
+                "classification_accuracy"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "low",
+              "accepted": [
+                "medium"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative",
+                "mixed"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "low",
+              "accepted": [
+                "medium"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "single_user",
+              "accepted": [
+                "single_department"
+              ],
+              "passed": false
+            }
+          },
+          "model_label_fields_passed": 5,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-008",
+        "execution_id": "synthetic-id-030",
+        "source_key": "synthetic-id-008",
+        "run_source_event_id": "synthetic-id-031",
+        "execution_status": "success",
+        "duration_ms": 8167,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 738,
+          "completion_tokens": 192,
+          "classification_confidence": 0.9,
+          "labels": {
+            "product_family": "signal_agent",
+            "intelligence_capability": "resident_qa",
+            "government_role": "unknown",
+            "signal_type": "trust_and_safety",
+            "ai_feedback_type": "privacy",
+            "trust_risk": "high",
+            "sentiment": "negative",
+            "urgency": "high",
+            "customer_impact": "resident_facing"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1243,
+          "completion_tokens": 293,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "signal_agent",
+              "accepted": [
+                "signal_agent"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "resident_qa",
+              "accepted": [
+                "resident_qa",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "resident"
+              ],
+              "passed": false
+            },
+            "signal_type": {
+              "observed": "trust_and_safety",
+              "accepted": [
+                "trust_and_safety"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "privacy",
+              "accepted": [
+                "privacy"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "high",
+              "accepted": [
+                "high"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "high",
+              "accepted": [
+                "high",
+                "medium"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "resident_facing",
+              "accepted": [
+                "resident_facing",
+                "single_user"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 8,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-009",
+        "execution_id": "synthetic-id-032",
+        "source_key": "synthetic-id-009",
+        "run_source_event_id": "synthetic-id-033",
+        "execution_status": "success",
+        "duration_ms": 9797,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 731,
+          "completion_tokens": 238,
+          "classification_confidence": 0.8,
+          "labels": {
+            "product_family": "unknown",
+            "intelligence_capability": "none",
+            "government_role": "unknown",
+            "signal_type": "usability",
+            "ai_feedback_type": "not_ai_related",
+            "trust_risk": "none",
+            "sentiment": "negative",
+            "urgency": "low",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1236,
+          "completion_tokens": 362,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "none",
+              "accepted": [
+                "unknown",
+                "none"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "usability",
+              "accepted": [
+                "workflow_gap",
+                "usability",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "not_ai_related",
+              "accepted": [
+                "usability",
+                "not_ai_related",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "none",
+              "accepted": [
+                "unknown",
+                "low"
+              ],
+              "passed": false
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative",
+                "mixed"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "low",
+              "accepted": [
+                "medium",
+                "unknown"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "single_department",
+                "unknown"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 7,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-010",
+        "execution_id": "synthetic-id-034",
+        "source_key": "synthetic-id-010",
+        "run_source_event_id": "synthetic-id-035",
+        "execution_status": "success",
+        "duration_ms": 10616,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 750,
+          "completion_tokens": 233,
+          "classification_confidence": 0.85,
+          "labels": {
+            "product_family": "signal_agent",
+            "intelligence_capability": "resident_qa",
+            "government_role": "resident",
+            "signal_type": "data_quality",
+            "ai_feedback_type": "source_freshness",
+            "trust_risk": "unknown",
+            "sentiment": "negative",
+            "urgency": "unknown",
+            "customer_impact": "resident_facing"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1272,
+          "completion_tokens": 457,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "signal_agent",
+              "accepted": [
+                "signal_agent"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "resident_qa",
+              "accepted": [
+                "resident_qa"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "resident",
+              "accepted": [
+                "resident",
+                "public_safety"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "data_quality",
+              "accepted": [
+                "trust_and_safety",
+                "data_quality"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "source_freshness",
+              "accepted": [
+                "source_freshness",
+                "answer_quality"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "unknown",
+              "accepted": [
+                "high",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "unknown",
+              "accepted": [
+                "critical"
+              ],
+              "passed": false
+            },
+            "customer_impact": {
+              "observed": "resident_facing",
+              "accepted": [
+                "single_user",
+                "resident_facing",
+                "unknown"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 8,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-011",
+        "execution_id": "synthetic-id-036",
+        "source_key": "synthetic-id-011",
+        "run_source_event_id": "synthetic-id-037",
+        "execution_status": "success",
+        "duration_ms": 8146,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 730,
+          "completion_tokens": 222,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "recreation_management",
+            "intelligence_capability": "none",
+            "government_role": "parks_and_recreation",
+            "signal_type": "feature_request",
+            "ai_feedback_type": "not_ai_related",
+            "trust_risk": "none",
+            "sentiment": "neutral",
+            "urgency": "low",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 3
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1236,
+          "completion_tokens": 255,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "recreation_management",
+              "accepted": [
+                "recreation_management"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "none",
+              "accepted": [
+                "none"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "parks_and_recreation",
+              "accepted": [
+                "parks_and_recreation"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "feature_request",
+              "accepted": [
+                "feature_request"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "not_ai_related",
+              "accepted": [
+                "not_ai_related"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "none",
+              "accepted": [
+                "none",
+                "low"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "neutral",
+              "accepted": [
+                "neutral",
+                "mixed"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "low",
+              "accepted": [
+                "low",
+                "medium"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "single_department"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 9,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-012",
+        "execution_id": "synthetic-id-038",
+        "source_key": "synthetic-id-012",
+        "run_source_event_id": "synthetic-id-039",
+        "execution_status": "success",
+        "duration_ms": 9004,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 732,
+          "completion_tokens": 197,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "recreation_management",
+            "intelligence_capability": "none",
+            "government_role": "parks_and_recreation",
+            "signal_type": "usability",
+            "ai_feedback_type": "not_ai_related",
+            "trust_risk": "none",
+            "sentiment": "negative",
+            "urgency": "medium",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1247,
+          "completion_tokens": 349,
+          "score_available": false,
+          "matched_source_ids": [
+            "[redacted]"
+          ],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "recreation_management",
+              "accepted": [
+                "recreation_management"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "none",
+              "accepted": [
+                "none"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "parks_and_recreation",
+              "accepted": [
+                "parks_and_recreation"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "usability",
+              "accepted": [
+                "usability"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "not_ai_related",
+              "accepted": [
+                "not_ai_related",
+                "usability"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "none",
+              "accepted": [
+                "none",
+                "low"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "negative",
+              "accepted": [
+                "negative",
+                "mixed"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "medium",
+                "low"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "single_department"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 9,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-013",
+        "execution_id": "synthetic-id-040",
+        "source_key": "synthetic-id-013",
+        "run_source_event_id": "synthetic-id-041",
+        "execution_status": "success",
+        "duration_ms": 8191,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 727,
+          "completion_tokens": 266,
+          "classification_confidence": 0.95,
+          "labels": {
+            "product_family": "process_automation",
+            "intelligence_capability": "none",
+            "government_role": "unknown",
+            "signal_type": "workflow_gap",
+            "ai_feedback_type": "not_ai_related",
+            "trust_risk": "none",
+            "sentiment": "neutral",
+            "urgency": "medium",
+            "customer_impact": "single_department"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1231,
+          "completion_tokens": 284,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "process_automation",
+              "accepted": [
+                "process_automation"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "none",
+              "accepted": [
+                "none",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "it_administrator",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "workflow_gap",
+              "accepted": [
+                "workflow_gap",
+                "feature_request"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "not_ai_related",
+              "accepted": [
+                "workflow_value",
+                "not_ai_related"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "none",
+              "accepted": [
+                "low",
+                "none"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "neutral",
+              "accepted": [
+                "negative",
+                "neutral"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "medium"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "single_department",
+              "accepted": [
+                "single_department",
+                "multiple_departments"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 9,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-014",
+        "execution_id": "synthetic-id-042",
+        "source_key": "synthetic-id-013",
+        "run_source_event_id": "synthetic-id-041",
+        "execution_status": "success",
+        "duration_ms": 140,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [],
+        "provider_call_count": 0,
+        "extraction": null,
+        "evidence_brief": null,
+        "review": {
+          "decision": null,
+          "policy_level": null,
+          "policy_reasons": [],
+          "human_checkpoints": 0
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {},
+          "model_label_fields_passed": 0,
+          "model_label_fields_total": 0,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "signals": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 0,
+          "replay_count": 1,
+          "signals": 0,
+          "product_ops_reviews": 0,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-015",
+        "execution_id": "synthetic-id-043",
+        "source_key": "synthetic-id-014",
+        "run_source_event_id": "synthetic-id-044",
+        "execution_status": "success",
+        "duration_ms": 5000,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 739,
+          "completion_tokens": 313,
+          "classification_confidence": 0.86,
+          "labels": {
+            "product_family": "analytics_assistant",
+            "intelligence_capability": "staff_qa",
+            "government_role": "unknown",
+            "signal_type": "trust_and_safety",
+            "ai_feedback_type": "transparency",
+            "trust_risk": "medium",
+            "sentiment": "mixed",
+            "urgency": "medium",
+            "customer_impact": "single_user"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "[redacted]",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "analytics_assistant",
+              "accepted": [
+                "analytics_assistant"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "staff_qa",
+              "accepted": [
+                "staff_qa"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "clerk",
+                "customer_service",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "trust_and_safety",
+              "accepted": [
+                "feature_request",
+                "trust_and_safety"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "transparency",
+              "accepted": [
+                "transparency",
+                "answer_quality"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "medium",
+              "accepted": [
+                "medium",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "mixed",
+              "accepted": [
+                "mixed",
+                "neutral"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "medium",
+              "accepted": [
+                "medium"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "single_user",
+              "accepted": [
+                "single_department",
+                "multiple_departments"
+              ],
+              "passed": false
+            }
+          },
+          "model_label_fields_passed": 8,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 1,
+          "outbox_rows": 1
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-016",
+        "execution_id": "synthetic-id-045",
+        "source_key": "synthetic-id-015",
+        "run_source_event_id": "synthetic-id-046",
+        "execution_status": "success",
+        "duration_ms": 7354,
+        "terminal_state": "[redacted]",
+        "expected_terminal_state": "[redacted]",
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_call_count": 2,
+        "extraction": {
+          "status": "succeeded",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 735,
+          "completion_tokens": 260,
+          "classification_confidence": 0.98,
+          "labels": {
+            "product_family": "unknown",
+            "intelligence_capability": "none",
+            "government_role": "unknown",
+            "signal_type": "unknown",
+            "ai_feedback_type": "not_ai_related",
+            "trust_risk": "none",
+            "sentiment": "neutral",
+            "urgency": "low",
+            "customer_impact": "unknown"
+          },
+          "evidence_span_count": 2
+        },
+        "evidence_brief": {
+          "evidence_status": "[redacted]",
+          "brief_status": "[redacted]",
+          "model": "glm-5.2",
+          "provider_call_status": "[redacted]",
+          "prompt_tokens": 1253,
+          "completion_tokens": 240,
+          "score_available": false,
+          "matched_source_ids": [],
+          "prohibited_roadmap_priority_is_null": true
+        },
+        "review": {
+          "decision": "reject",
+          "policy_level": "[redacted]",
+          "policy_reasons": [
+            "[redacted]",
+            "[redacted]"
+          ],
+          "human_checkpoints": 1
+        },
+        "checks": {
+          "operational": {
+            "execution_succeeded": true,
+            "terminal_state": true,
+            "one_review_for_new_signal": true,
+            "replay_bypasses_both_model_calls": true,
+            "exactly_two_model_calls_for_new_signal": true,
+            "no_vector_similarity_claim": true,
+            "degraded_case_is_explicit": true,
+            "brief_prohibits_roadmap_priority": true,
+            "side_effect_deltas": true,
+            "no_real_external_action": true
+          },
+          "operational_passed": true,
+          "model_labels": {
+            "product_family": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            },
+            "intelligence_capability": {
+              "observed": "none",
+              "accepted": [
+                "none",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "government_role": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            },
+            "signal_type": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            },
+            "ai_feedback_type": {
+              "observed": "not_ai_related",
+              "accepted": [
+                "not_ai_related",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "trust_risk": {
+              "observed": "none",
+              "accepted": [
+                "none",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "sentiment": {
+              "observed": "neutral",
+              "accepted": [
+                "neutral"
+              ],
+              "passed": true
+            },
+            "urgency": {
+              "observed": "low",
+              "accepted": [
+                "low",
+                "unknown"
+              ],
+              "passed": true
+            },
+            "customer_impact": {
+              "observed": "unknown",
+              "accepted": [
+                "unknown"
+              ],
+              "passed": true
+            }
+          },
+          "model_label_fields_passed": 9,
+          "model_label_fields_total": 9,
+          "retrieval_expected_neighbors_present": true,
+          "retrieval_forbidden_neighbors_absent": true,
+          "side_effects": {
+            "source_events": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "replay_count": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "signals": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "product_ops_reviews": {
+              "expected": 1,
+              "observed": 1,
+              "passed": true
+            },
+            "final_reviews": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "theme_memberships": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "embedding_records": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "artifacts": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            },
+            "outbox_rows": {
+              "expected": 0,
+              "observed": 0,
+              "passed": true
+            }
+          }
+        },
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "signals": 0,
+          "product_ops_reviews": 1,
+          "final_reviews": 0,
+          "theme_memberships": 0,
+          "embedding_records": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        }
+      }
+    ]
+  }
+}

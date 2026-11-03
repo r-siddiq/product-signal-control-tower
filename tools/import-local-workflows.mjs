@@ -1,9 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normalizeApiBase, parseImportOptions, secureN8nFetch } from './lib/import-options.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dryRun = process.argv.includes('--dry-run');
+const { dryRun, activateRequested } = parseImportOptions(process.argv.slice(2));
 
 function parseEnv(path) {
   return Object.fromEntries(
@@ -27,26 +28,24 @@ function parseEnv(path) {
   );
 }
 
-const runtimeEnv = resolve(projectRoot, 'runtime', '.n8n-mcp.env');
+const runtimeEnv = resolve(projectRoot, 'runtime', '.n8n-api.env');
 const runtime = {
   ...(existsSync(runtimeEnv) ? parseEnv(runtimeEnv) : {}),
   ...process.env,
 };
-const apiBase = runtime.N8N_API_URL?.replace(/\/$/, '');
-if (!apiBase || !runtime.N8N_API_KEY) {
+const rawApiBase = runtime.N8N_API_URL;
+if (!rawApiBase || !runtime.N8N_API_KEY) {
   throw new Error(
-    'Set N8N_API_URL and N8N_API_KEY in the process environment or provide runtime/.n8n-mcp.env.',
+    'Set N8N_API_URL and N8N_API_KEY in the process environment or provide runtime/.n8n-api.env.',
   );
 }
 
+const apiBase = normalizeApiBase(rawApiBase);
+
 async function api(path, options = {}) {
-  const response = await fetch(`${apiBase}${path}`, {
+  const response = await secureN8nFetch(`${apiBase}${path}`, runtime.N8N_API_KEY, {
     ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-N8N-API-KEY': runtime.N8N_API_KEY,
-      ...options.headers,
-    },
+    headers: { 'Content-Type': 'application/json', ...options.headers },
   });
 
   const text = await response.text();
@@ -64,8 +63,8 @@ async function api(path, options = {}) {
 }
 
 const cleanFiles = [
-  resolve(projectRoot, 'workflows', 'signal-product-signal-control-tower.json'),
-  resolve(projectRoot, 'workflows', 'signal-product-signal-error-handler.json'),
+  resolve(projectRoot, 'workflows', 'product-signal-control-tower.json'),
+  resolve(projectRoot, 'workflows', 'product-signal-error-handler.json'),
 ];
 const cleanWorkflows = cleanFiles.map((path) => JSON.parse(readFileSync(path, 'utf8')));
 
@@ -126,6 +125,9 @@ const existingByName = new Map(
   (existingResponse.data ?? []).map((workflow) => [workflow.name, workflow]),
 );
 const results = [];
+if (!dryRun && !activateRequested && cleanWorkflows.some((workflow) => existingByName.get(workflow.name)?.active)) {
+  throw new Error('A matching workflow is already active; deactivate it before an inactive import');
+}
 
 for (const cleanWorkflow of cleanWorkflows) {
   const payload = prepareLocalWorkflow(cleanWorkflow);
@@ -186,17 +188,17 @@ if (!dryRun) {
     ? 'assigned'
     : 'update_returned_without_confirmation';
 
-  // Both workflows must be active for production-form executions to invoke the
-  // companion Error Trigger on this n8n version. Activation remains loopback-only
-  // because the runtime binds n8n to 127.0.0.1.
-  for (const result of [errorResult, mainResult]) {
-    const activated = await api(`/api/v1/workflows/${result.id}/activate`, {
-      method: 'POST',
-      body: '{}',
-    });
-    result.active = Boolean(activated.active);
-    if (!result.active) {
-      throw new Error(`Workflow did not activate: ${result.name}`);
+  // Activation is explicit because the review wait link has no incoming authentication.
+  if (activateRequested) {
+    for (const result of [errorResult, mainResult]) {
+      const activated = await api(`/api/v1/workflows/${result.id}/activate`, {
+        method: 'POST',
+        body: '{}',
+      });
+      result.active = Boolean(activated.active);
+      if (!result.active) {
+        throw new Error(`Workflow did not activate: ${result.name}`);
+      }
     }
   }
 }

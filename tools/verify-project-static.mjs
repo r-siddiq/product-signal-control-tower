@@ -17,8 +17,8 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const verifierPath = resolve(fileURLToPath(import.meta.url));
 const expectedMainName = 'Product Signal Control Tower';
-const mainWorkflowRelative = 'workflows/signal-product-signal-control-tower.json';
-const companionWorkflowRelative = 'workflows/signal-product-signal-error-handler.json';
+const mainWorkflowRelative = 'workflows/product-signal-control-tower.json';
+const companionWorkflowRelative = 'workflows/product-signal-error-handler.json';
 
 const reviewableRootFiles = new Set([
   '.env.example',
@@ -230,21 +230,7 @@ const inputEnums = {
     'interview',
     'internal_message',
   ]),
-  product_hint: new Set([
-    'municipal_websites',
-    'agenda_and_meeting',
-    'see_click_fix',
-    'signal_agent',
-    'signal_athena',
-    'community_development',
-    'recreation_management',
-    'public_safety',
-    'records_and_documents',
-    'mass_notification',
-    'web_accessibility',
-    'process_automation',
-    'unknown',
-  ]),
+  product_hint: new Set(["agenda_and_meeting", "analytics_assistant", "municipal_websites", "process_automation", "recreation_management", "resident_request_tracking", "signal_agent", "unknown"]),
 };
 const modelEnums = {
   product_family: inputEnums.product_hint,
@@ -501,137 +487,36 @@ function validateFixtureContract() {
   fixtureSummary.status = after === before ? 'passed' : 'failed';
 }
 
+function validateRedactedCapture(relativePath, rule, requiredKeys) {
+  const fullPath = resolve(projectRoot, relativePath);
+  if (!existsSync(fullPath)) {
+    fail(rule, relativePath);
+    return;
+  }
+  try {
+    const capture = JSON.parse(readFileSync(fullPath, "utf8"));
+    const source = capture && capture.source_capture;
+    const valid = capture && typeof capture.provenance === "string"
+      && source && typeof source === "object"
+      && typeof source.captured_at === "string" && Number.isFinite(Date.parse(source.captured_at))
+      && typeof source.status === "string"
+      && requiredKeys.every((key) => Object.prototype.hasOwnProperty.call(source, key));
+    if (!valid) fail(rule, relativePath);
+  } catch {
+    fail(rule, relativePath);
+  }
+}
+
 function validateProviderEvidence() {
-  const path = resolve(projectRoot, 'evaluation', 'provider-captured-results.json');
-  if (!existsSync(path)) {
-    fail('evidence.provider_capture_missing', 'evaluation/provider-captured-results.json');
-    providerEvidenceSummary.status = 'failed';
-    return;
-  }
-  if (!parsedJson.has(path)) {
-    fail('evidence.provider_capture_invalid_json', 'evaluation/provider-captured-results.json');
-    providerEvidenceSummary.status = 'failed';
-    return;
-  }
-
-  const before = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  const evidence = parsedJson.get(path);
-  const cases = Array.isArray(evidence?.cases) ? evidence.cases : [];
-  const aggregate = evidence?.aggregate ?? {};
-  providerEvidenceSummary.cases_captured = aggregate.cases_captured ?? null;
-  providerEvidenceSummary.operational_cases_passed = aggregate.operational_cases_passed ?? null;
-  providerEvidenceSummary.provider_calls = aggregate.provider_calls ?? null;
-  providerEvidenceSummary.model = evidence?.provider?.model ?? null;
-
-  if (
-    evidence?.synthetic !== true
-    || evidence?.schema_version !== '3.0.0'
-    || evidence?.status !== 'provider_backed_operational_acceptance_passed'
-    || evidence?.provider?.model !== 'glm-5.2'
-    || evidence?.provider?.credential_storage !== 'encrypted_local_n8n_credential'
-    || evidence?.evidence_strategy?.vector_similarity_claimed !== false
-    || aggregate.cases_captured !== 16
-    || aggregate.operational_cases_passed !== 16
-    || aggregate.provider_calls !== 30
-    || aggregate.real_external_actions !== 0
-    || aggregate.fabricated_vector_scores !== 0
-  ) {
-    fail('evidence.provider_capture_contract_invalid', 'evaluation/provider-captured-results.json');
-  }
-
-  if (!sameUniqueSet(cases.map((entry) => entry.case_id), mandatoryCaseIds)) {
-    fail('evidence.provider_case_ids_invalid', 'evaluation/provider-captured-results.json');
-  }
-  for (const entry of cases) {
-    const id = typeof entry.case_id === 'string' ? entry.case_id : 'unknown';
-    if (
-      entry.synthetic !== true
-      || entry.execution_status !== 'success'
-      || entry.checks?.operational_passed !== true
-      || !Number.isInteger(entry.review?.human_checkpoints)
-      || !/^\d+$/.test(entry.execution_id ?? '')
-    ) {
-      fail('evidence.provider_case_contract_invalid', `evaluation/provider-captured-results.json#${id}`);
-    }
-  }
-
-  const after = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  providerEvidenceSummary.status = after === before ? 'passed' : 'failed';
+validateRedactedCapture("evaluation/historical/provider-capture.redacted.json", "evidence.provider_capture_missing", ["cases", "aggregate", "provider", "synthetic"]);
 }
 
 function validateOtelEvidence() {
-  const relativePath = 'evaluation/otel-captured-results.json';
-  const path = resolve(projectRoot, relativePath);
-  if (!existsSync(path) || !parsedJson.has(path)) {
-    fail('evidence.otel_capture_missing_or_invalid', relativePath);
-    otelEvidenceSummary.status = 'failed';
-    return;
-  }
-
-  const before = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  const evidence = parsedJson.get(path);
-  const cases = Array.isArray(evidence?.cases) ? evidence.cases : [];
-  otelEvidenceSummary.cases_captured = cases.length;
-  otelEvidenceSummary.native_n8n_tracing = evidence?.source?.includes?.('n8n') ?? true;
-  otelEvidenceSummary.wait_resume_links = cases.some(
-    (entry) => entry.checks?.wait_resume_link_present === true,
-  );
-
-  if (
-    evidence?.synthetic !== true
-    || evidence?.status !== 'native_otel_acceptance_passed'
-    || cases.length < 4
-    || !cases.every((entry) => (
-      entry.checks?.trace_present === true
-      && entry.checks?.workflow_spans_present === true
-      && entry.checks?.node_spans_present === true
-    ))
-    || !cases.some((entry) => entry.checks?.wait_resume_link_present === true)
-    || !cases.some((entry) => entry.checks?.replay_bypasses_provider_nodes === true)
-    || !cases.some((entry) => entry.checks?.degraded_path_traced === true)
-  ) {
-    fail('evidence.otel_capture_contract_invalid', relativePath);
-  }
-
-  const after = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  otelEvidenceSummary.status = after === before ? 'passed' : 'failed';
+validateRedactedCapture("evaluation/historical/observability-capture.redacted.json", "evidence.otel_capture_contract_invalid", ["cases", "source", "synthetic"]);
 }
 
 function validateCleanImportEvidence() {
-  const relativePath = 'evaluation/clean-import-captured-results.json';
-  const path = resolve(projectRoot, relativePath);
-  if (!existsSync(path) || !parsedJson.has(path)) {
-    fail('evidence.clean_import_missing_or_invalid', relativePath);
-    cleanImportSummary.status = 'failed';
-    return;
-  }
-
-  const before = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  const evidence = parsedJson.get(path);
-  const checks = Array.isArray(evidence?.checks) ? evidence.checks : [];
-  cleanImportSummary.probes_imported = evidence?.created_inactive_probe_workflows ?? null;
-  cleanImportSummary.probes_removed = evidence?.removed_probe_workflows ?? null;
-  if (
-    evidence?.synthetic !== true
-    || evidence?.status !== 'clean_import_acceptance_passed'
-    || evidence?.created_inactive_probe_workflows !== 2
-    || evidence?.removed_probe_workflows !== 2
-    || evidence?.original_workflows_modified !== false
-    || evidence?.credentials_imported !== false
-    || checks.length !== 2
-    || !checks.every((entry) => (
-      entry.inactive === true
-      && entry.node_count_preserved === true
-      && entry.functional_node_count_preserved === true
-      && entry.node_names_preserved === true
-      && entry.connections_preserved === true
-      && entry.credentials_absent === true
-    ))
-  ) {
-    fail('evidence.clean_import_contract_invalid', relativePath);
-  }
-  const after = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  cleanImportSummary.status = after === before ? 'passed' : 'failed';
+validateRedactedCapture("evaluation/historical/clean-import-capture.redacted.json", "evidence.clean_import_contract_invalid", ["checks", "created_inactive_probe_workflows", "removed_probe_workflows", "synthetic"]);
 }
 
 function validateWorkflowLayoutEvidence() {
@@ -664,63 +549,7 @@ function validateWorkflowLayoutEvidence() {
 }
 
 function validatePresentationQaEvidence() {
-  const relativePath = 'evaluation/presentation-qa-captured-results.json';
-  const path = resolve(projectRoot, relativePath);
-  if (!existsSync(path) || !parsedJson.has(path)) {
-    fail('evidence.presentation_qa_missing_or_invalid', relativePath);
-    presentationQaSummary.status = 'failed';
-    return;
-  }
-  const before = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  const evidence = parsedJson.get(path);
-  const viewports = Array.isArray(evidence?.standalone_html?.viewports)
-    ? evidence.standalone_html.viewports
-    : [];
-  presentationQaSummary.file_mode = evidence?.standalone_html?.file_url_load ?? null;
-  presentationQaSummary.viewports = viewports.length;
-  presentationQaSummary.pdf_pages = evidence?.pdf?.page_count ?? null;
-  if (
-    evidence?.status !== 'passed'
-    || evidence?.standalone_html?.file_url_load !== 'passed'
-    || evidence?.standalone_html?.scene_count !== 15
-    || evidence?.standalone_html?.remote_resource_count !== 0
-    || evidence?.standalone_html?.console_error_count !== 0
-    || evidence?.standalone_html?.page_error_count !== 0
-    || viewports.length !== 2
-    || !viewports.every((entry) => entry.horizontal_overflow_count === 0)
-    || !viewports.every((entry) => entry.critical_content_clipping_count === 0)
-    || !viewports.every((entry) => entry.minimum_rendered_text_pixels >= 10)
-    || evidence?.standalone_html?.screen_typography_contract?.minimum_required_text_pixels !== 10
-    || evidence?.standalone_html?.screen_typography_contract?.dense_scenes_scroll_instead_of_shrinking_text !== true
-    || evidence?.standalone_html?.screen_typography_contract?.status !== 'passed'
-    || evidence?.standalone_html?.ultra_wide_layout?.status !== 'passed'
-    || evidence?.standalone_html?.ultra_wide_layout?.width < 2400
-    || evidence?.standalone_html?.ultra_wide_layout?.scene_overflow_count !== 0
-    || evidence?.standalone_html?.opportunity_brief_contract?.selected_opportunities_tested !== 5
-    || evidence?.standalone_html?.opportunity_brief_contract?.required_fields_per_opportunity !== 4
-    || evidence?.standalone_html?.opportunity_brief_contract?.status !== 'passed'
-    || evidence?.standalone_html?.reviewer_context_contract?.product_operations_operating_loop !== 'passed'
-    || evidence?.standalone_html?.reviewer_context_contract?.portfolio_business_cases !== 5
-    || evidence?.standalone_html?.reviewer_context_contract?.architecture_choices_explained !== 6
-    || evidence?.standalone_html?.reviewer_context_contract?.monitoring_cadences !== 3
-    || evidence?.standalone_html?.reviewer_context_contract?.cost_mechanisms?.length !== 4
-    || evidence?.standalone_html?.reviewer_context_contract?.signal_adjacent_palette !== 'passed'
-    || evidence?.standalone_html?.reviewer_context_contract?.candidate_created_disclaimer !== 'present'
-    || evidence?.standalone_html?.reviewer_context_contract?.status !== 'passed'
-    || evidence?.standalone_html?.fallbacks?.reduced_motion !== 'passed'
-    || evidence?.standalone_html?.fallbacks?.javascript_disabled !== 'passed'
-    || evidence?.pdf?.page_count !== 15
-    || evidence?.pdf?.rendered_page_count !== 15
-    || evidence?.pdf?.visual_inspection !== 'passed'
-    || evidence?.pdf?.clipped_critical_content_count !== 0
-    || evidence?.pdf?.full_five_opportunity_matrix !== 'passed'
-    || evidence?.pdf?.embedded_javascript !== false
-    || evidence?.pdf?.encrypted !== false
-  ) {
-    fail('evidence.presentation_qa_contract_invalid', relativePath);
-  }
-  const after = [...failures.values()].reduce((sum, item) => sum + item.count, 0);
-  presentationQaSummary.status = after === before ? 'passed' : 'failed';
+validateRedactedCapture("evaluation/historical/presentation-qa-capture.redacted.json", "evidence.presentation_qa_contract_invalid", ["standalone_html", "pdf"]);
 }
 
 function containsObjectKey(value, targetKey) {
@@ -993,52 +822,33 @@ validatePresentationQaEvidence();
 validateWorkflow(mainWorkflowRelative, 'main');
 validateWorkflow(companionWorkflowRelative, 'companion');
 
-const alignmentMatrixRelative = 'evaluation/brief-role-alignment-matrix.md';
-const alignmentMatrixPath = resolve(projectRoot, alignmentMatrixRelative);
-if (!existsSync(alignmentMatrixPath)) {
-  pend('artifact.brief_role_alignment_pending', alignmentMatrixRelative);
+const projectScopeExclusions = [
+  "Root and runtime .env files are local configuration and excluded from checked-in source scans",
+  "evaluation/local/ and runtime/tmp/ are generated evidence and temporary output locations",
+  "Agent configuration and instruction files are absent from the project tree",
+  "An earlier reference matrix is not included with the project files",
+  "The original presentation scripts are not part of the summary page at presentation/index.html",
+  "Supporting project artifacts are outside the retained project scope",
+];
+const genericPresentationPath = resolve(projectRoot, "presentation/index.html");
+if (!existsSync(genericPresentationPath)) fail("artifact.generic_portfolio_presentation_missing", "presentation/index.html");
+validateRedactedCapture("evaluation/historical/playwright-2026-08-04.redacted.json", "evidence.august_capture_missing_or_invalid", ["scenarios", "mode", "synthetic"]);
+const currentMockPath = resolve(projectRoot, "evaluation/current-mock-run.json");
+if (!existsSync(currentMockPath)) {
+  fail("evidence.current_mock_run_missing", "evaluation/current-mock-run.json");
 } else {
-  const alignmentText = readFileSync(alignmentMatrixPath, 'utf8');
-  for (const requiredHeading of [
-    '## Official brief coverage',
-    '## Current role alignment',
-    '## Signal-specific grounding',
-    '## Claim and evidence discipline',
-    '## Remaining discovery questions',
-  ]) {
-    if (!alignmentText.includes(requiredHeading)) {
-      fail('artifact.brief_role_alignment_incomplete', alignmentMatrixRelative);
-    }
-  }
-}
-
-const presentationRoot = resolve(projectRoot, 'presentation');
-if (!existsSync(presentationRoot)) {
-  pend('artifact.presentation_pending', 'presentation/');
-} else {
-  for (const path of ['presentation/index.html', 'presentation/styles.css', 'presentation/app.js']) {
-    if (!existsSync(resolve(projectRoot, path))) pend('artifact.presentation_file_pending', path);
-  }
-}
-
-const submissionRoot = resolve(projectRoot, 'submission');
-if (!existsSync(submissionRoot)) {
-  pend('artifact.submission_pending', 'submission/');
-} else {
-  const submissionFiles = scannedFiles
-    .map(toRelative)
-    .filter((path) => path.startsWith('submission/'));
-  if (!submissionFiles.some((path) => extname(path).toLowerCase() === '.html')) {
-    pend('artifact.submission_html_pending', 'submission/<presentation>.html');
-  }
-  if (!submissionFiles.some((path) => extname(path).toLowerCase() === '.pdf')) {
-    pend('artifact.submission_pdf_pending', 'submission/<presentation>.pdf');
-  }
-  if (!submissionFiles.includes('submission/phase3/brief-role-alignment-matrix.md')) {
-    pend(
-      'artifact.submission_brief_role_alignment_pending',
-      'submission/phase3/brief-role-alignment-matrix.md',
-    );
+  try {
+    const mock = JSON.parse(readFileSync(currentMockPath, "utf8"));
+    const scenarios = mock && mock.playwright && mock.playwright.scenarios;
+    const actual = Array.isArray(scenarios) ? scenarios.map((item) => item.scenario).sort() : [];
+    const expected = ["approve", "invalid", "reject", "replay"];
+    const migrationsOk = mock.database_migrations && mock.database_migrations.fresh_database_apply_passed === true && mock.database_migrations.repeat_application_refused === true;
+    const importOk = mock.workflow_import && mock.workflow_import.documented_inactive_import === true && mock.workflow_import.explicit_activation === true;
+    const mockOnly = mock.isolation && mock.isolation.real_provider_calls === 0 && mock.isolation.local_structured_mock_calls > 0;
+    const scenariosOk = Array.isArray(scenarios) && scenarios.length === 4 && JSON.stringify(actual) === JSON.stringify(expected) && scenarios.every((item) => item.passed === true);
+    if (!migrationsOk || !importOk || !mockOnly || !scenariosOk) fail("evidence.current_mock_run_invalid", "evaluation/current-mock-run.json");
+  } catch {
+    fail("evidence.current_mock_run_invalid", "evaluation/current-mock-run.json");
   }
 }
 
@@ -1048,6 +858,7 @@ const sortedFailures = [...failures.values()].sort(
 const sortedPending = [...pending.values()].sort(
   (left, right) => left.path.localeCompare(right.path) || left.rule.localeCompare(right.rule),
 );
+
 const summary = {
   verifier: 'verify-project-static',
   version: '1.0.0',
@@ -1070,14 +881,7 @@ const summary = {
   workflows: workflowSummary,
   failures: sortedFailures,
   pending: sortedPending,
-  exclusions: [
-    '.env',
-    'evaluation/local/',
-    'submission/.working/',
-    'generated browser-test and cache directories',
-    'retired orchestration files and generated temporary output',
-    'non-reviewable project control, supplied-context, and skill files',
-  ],
+  exclusions: projectScopeExclusions,
   sanitized_output: true,
 };
 

@@ -26,6 +26,7 @@ import {
 } from './lib/demo-runtime.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const browserExecutable = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || chromium.executablePath();
 const fixtureDirectory = resolve(projectRoot, 'fixtures');
 const localEvidenceRoot = resolve(projectRoot, 'evaluation', 'local', 'playwright-demo');
 
@@ -131,7 +132,7 @@ async function preflight() {
   assert(n8nReady.ok, `n8n readiness returned HTTP ${n8nReady.status}.`);
   assert(jaegerReady.ok, `Jaeger returned HTTP ${jaegerReady.status}.`);
   assert(formReady.ok, `The production intake form returned HTTP ${formReady.status}.`);
-  assert(existsSync(chromium.executablePath()), 'The Playwright Chromium executable is unavailable.');
+  assert(existsSync(browserExecutable), 'The Playwright Chromium executable is unavailable.');
   if (arguments_.mode === 'headed') {
     assert(config.owner.N8N_OWNER_EMAIL && config.owner.N8N_OWNER_PASSWORD, 'The ignored local owner login is unavailable for execution-graph viewing.');
   }
@@ -174,6 +175,7 @@ if (arguments_.captureVideo) mkdirSync(videoDirectory, { recursive: true });
 mkdirSync(profileDirectory, { recursive: true });
 
 const context = await chromium.launchPersistentContext(profileDirectory, {
+  executablePath: browserExecutable,
   headless: arguments_.mode === 'headless',
   viewport: { width: 1366, height: 768 },
   ...(arguments_.captureVideo ? { recordVideo: { dir: videoDirectory, size: { width: 1366, height: 768 } } } : {}),
@@ -183,7 +185,7 @@ page.setDefaultTimeout(30_000);
 const composeText = readFileSync(resolve(projectRoot, 'runtime', 'compose.yaml'), 'utf8');
 const playwrightPackage = JSON.parse(readFileSync(resolve(projectRoot, 'node_modules', 'playwright', 'package.json'), 'utf8'));
 const workflowExport = readFileSync(
-  resolve(projectRoot, 'workflows', 'signal-product-signal-control-tower.json'),
+  resolve(projectRoot, 'workflows', 'product-signal-control-tower.json'),
   'utf8',
 );
 const versionEvidence = {

@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normalizeApiBase, secureN8nFetch } from './lib/import-options.mjs';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -24,24 +25,20 @@ function parseEnv(path) {
   );
 }
 
-const envPath = resolve(projectRoot, 'runtime', '.n8n-mcp.env');
+const envPath = resolve(projectRoot, 'runtime', '.n8n-api.env');
 const runtime = {
   ...(existsSync(envPath) ? parseEnv(envPath) : {}),
   ...process.env,
 };
-const apiBase = runtime.N8N_API_URL?.replace(/\/$/, '');
+const apiBase = runtime.N8N_API_URL ? normalizeApiBase(runtime.N8N_API_URL, { loopbackOnly: true }) : '';
 if (!apiBase || !runtime.N8N_API_KEY) {
   throw new Error('Local n8n API configuration is unavailable.');
 }
 
 async function request(path, options = {}, expected = [200]) {
-  const response = await fetch(`${apiBase}${path}`, {
+  const response = await secureN8nFetch(`${apiBase}${path}`, runtime.N8N_API_KEY, {
     ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-N8N-API-KEY': runtime.N8N_API_KEY,
-      ...options.headers,
-    },
+    headers: { 'Content-Type': 'application/json', ...options.headers },
   });
   const text = await response.text();
   const body = text ? JSON.parse(text) : {};
@@ -52,8 +49,8 @@ async function request(path, options = {}, expected = [200]) {
 }
 
 const paths = [
-  'workflows/signal-product-signal-control-tower.json',
-  'workflows/signal-product-signal-error-handler.json',
+  'workflows/product-signal-control-tower.json',
+  'workflows/product-signal-error-handler.json',
 ];
 const workflows = paths.map((path) => (
   JSON.parse(readFileSync(resolve(projectRoot, path), 'utf8'))

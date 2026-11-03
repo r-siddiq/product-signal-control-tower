@@ -1,4 +1,4 @@
-name: signal-ai-demo
+name: product-signal-control-tower
 
 services:
   postgres:

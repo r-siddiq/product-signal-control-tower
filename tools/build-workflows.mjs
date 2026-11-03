@@ -342,9 +342,9 @@ const mainNodes = [
               { option: 'unknown' },
               { option: 'municipal_websites' },
               { option: 'agenda_and_meeting' },
-              { option: 'see_click_fix' },
+              { option: 'resident_request_tracking' },
               { option: 'signal_agent' },
-              { option: 'signal_athena' },
+              { option: 'analytics_assistant' },
               { option: 'community_development' },
               { option: 'recreation_management' },
               { option: 'public_safety' },
@@ -493,9 +493,9 @@ const mainNodes = [
               { option: 'unknown' },
               { option: 'municipal_websites' },
               { option: 'agenda_and_meeting' },
-              { option: 'see_click_fix' },
+              { option: 'resident_request_tracking' },
               { option: 'signal_agent' },
-              { option: 'signal_athena' },
+              { option: 'analytics_assistant' },
               { option: 'community_development' },
               { option: 'recreation_management' },
               { option: 'public_safety' },
@@ -918,8 +918,8 @@ validateExport(mainWorkflow, { main: true });
 validateExport(errorWorkflow);
 
 for (const [name, workflow] of [
-  ['signal-product-signal-control-tower.json', mainWorkflow],
-  ['signal-product-signal-error-handler.json', errorWorkflow],
+  ['product-signal-control-tower.json', mainWorkflow],
+  ['product-signal-error-handler.json', errorWorkflow],
 ]) {
   writeFileSync(new URL(name, workflowDir), `${JSON.stringify(workflow, null, 2)}\n`, 'utf8');
   console.log(`Wrote workflows/${name}`);

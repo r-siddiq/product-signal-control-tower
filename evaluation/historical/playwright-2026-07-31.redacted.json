@@ -1,0 +1,352 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "1.0.0",
+    "synthetic": true,
+    "captured_at": "2026-07-31T13:28:01.755Z",
+    "run_id": "synthetic-id-054",
+    "mode": "headless",
+    "status": "playwright_demo_passed",
+    "preflight": {
+      "workflow_active": true,
+      "functional_nodes": 20,
+      "visible_intake_fields": 3,
+      "form_ready": true,
+      "jaeger_ready": true,
+      "chromium_ready": true,
+      "run_namespace_unused": true
+    },
+    "scenarios": [
+      {
+        "synthetic": true,
+        "scenario": "invalid",
+        "scenario_id": "[redacted]",
+        "execution_id": "synthetic-id-055",
+        "source_event_id": "synthetic-id-056",
+        "execution_status": "error",
+        "terminal_node": "[redacted]",
+        "terminal_state": "error",
+        "duration_ms": 137,
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [],
+        "human_reviews": 0,
+        "database_delta": {
+          "source_events": 0,
+          "replay_count": 0,
+          "replay_mismatch_count": 0,
+          "signals": 0,
+          "product_ops_reviews": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        },
+        "trace": {
+          "trace_ids": [
+            "synthetic-id-057"
+          ],
+          "trace_count": 1,
+          "span_count": 9,
+          "workflow_spans": 2,
+          "node_spans": 7,
+          "follows_from": 0,
+          "node_names": [
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]"
+          ]
+        },
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "passed": true
+      },
+      {
+        "synthetic": true,
+        "scenario": "replay",
+        "scenario_id": "[redacted]",
+        "execution_id": "synthetic-id-058",
+        "source_event_id": "synthetic-id-059",
+        "execution_status": "success",
+        "terminal_node": "[redacted]",
+        "terminal_state": "[redacted]",
+        "duration_ms": 48,
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [],
+        "human_reviews": 0,
+        "database_delta": {
+          "source_events": 0,
+          "replay_count": 1,
+          "replay_mismatch_count": 0,
+          "signals": 0,
+          "product_ops_reviews": 0,
+          "artifacts": 0,
+          "outbox_rows": 0
+        },
+        "trace": {
+          "trace_ids": [
+            "synthetic-id-060"
+          ],
+          "trace_count": 1,
+          "span_count": 8,
+          "workflow_spans": 1,
+          "node_spans": 7,
+          "follows_from": 0,
+          "node_names": [
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]"
+          ]
+        },
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "passed": true
+      },
+      {
+        "synthetic": true,
+        "scenario": "reject",
+        "scenario_id": "[redacted]",
+        "execution_id": "synthetic-id-061",
+        "source_event_id": "synthetic-id-062",
+        "execution_status": "success",
+        "terminal_node": "[redacted]",
+        "terminal_state": "[redacted]",
+        "duration_ms": 14146,
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "human_reviews": 1,
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "replay_mismatch_count": 0,
+          "signals": 0,
+          "product_ops_reviews": 1,
+          "artifacts": 0,
+          "outbox_rows": 0
+        },
+        "trace": {
+          "trace_ids": [
+            "synthetic-id-063",
+            "synthetic-id-064"
+          ],
+          "trace_count": 2,
+          "span_count": 20,
+          "workflow_spans": 2,
+          "node_spans": 18,
+          "follows_from": 1,
+          "node_names": [
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]"
+          ]
+        },
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "passed": true
+      },
+      {
+        "synthetic": true,
+        "scenario": "approve",
+        "scenario_id": "[redacted]",
+        "execution_id": "synthetic-id-065",
+        "source_event_id": "synthetic-id-066",
+        "execution_status": "success",
+        "terminal_node": "[redacted]",
+        "terminal_state": "[redacted]",
+        "duration_ms": 15745,
+        "run_nodes": [
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]",
+          "[redacted]"
+        ],
+        "provider_calls": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "human_reviews": 1,
+        "database_delta": {
+          "source_events": 1,
+          "replay_count": 0,
+          "replay_mismatch_count": 0,
+          "signals": 1,
+          "product_ops_reviews": 1,
+          "artifacts": 1,
+          "outbox_rows": 1
+        },
+        "trace": {
+          "trace_ids": [
+            "synthetic-id-067",
+            "synthetic-id-068"
+          ],
+          "trace_count": 2,
+          "span_count": 20,
+          "workflow_spans": 2,
+          "node_spans": 18,
+          "follows_from": 1,
+          "node_names": [
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]",
+            "[redacted]"
+          ]
+        },
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "passed": true
+      }
+    ],
+    "interpretation": [
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]"
+    ]
+  }
+}

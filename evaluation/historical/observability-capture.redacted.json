@@ -1,0 +1,282 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "1.0.0",
+    "synthetic": true,
+    "captured_at": "2026-07-30T20:24:42.551Z",
+    "source": {
+      "provider_evidence_file": "[redacted]",
+      "backend": "[redacted]",
+      "service_name": "[redacted]",
+      "query_api": "[redacted]"
+    },
+    "interpretation": [
+      "[redacted]",
+      "[redacted]",
+      "[redacted]",
+      "[redacted]"
+    ],
+    "status": "native_otel_acceptance_passed",
+    "cases": [
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-001",
+        "execution_id": "synthetic-id-016",
+        "terminal_state": "[redacted]",
+        "provider_call_count": 2,
+        "business_degradation": false,
+        "traces": [
+          {
+            "trace_id": "synthetic-id-047",
+            "span_count": 5,
+            "workflow_span_count": 1,
+            "node_span_count": 4,
+            "follows_from_reference_count": 1,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "success",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          },
+          {
+            "trace_id": "synthetic-id-048",
+            "span_count": 15,
+            "workflow_span_count": 1,
+            "node_span_count": 14,
+            "follows_from_reference_count": 0,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "waiting",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          }
+        ],
+        "checks": {
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_bypasses_provider_nodes": true,
+          "degraded_path_traced": true
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-014",
+        "execution_id": "synthetic-id-042",
+        "terminal_state": "[redacted]",
+        "provider_call_count": 0,
+        "business_degradation": false,
+        "traces": [
+          {
+            "trace_id": "synthetic-id-049",
+            "span_count": 8,
+            "workflow_span_count": 1,
+            "node_span_count": 7,
+            "follows_from_reference_count": 0,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "success",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          }
+        ],
+        "checks": {
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_bypasses_provider_nodes": true,
+          "degraded_path_traced": true
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-015",
+        "execution_id": "synthetic-id-043",
+        "terminal_state": "[redacted]",
+        "provider_call_count": 2,
+        "business_degradation": true,
+        "traces": [
+          {
+            "trace_id": "synthetic-id-050",
+            "span_count": 5,
+            "workflow_span_count": 1,
+            "node_span_count": 4,
+            "follows_from_reference_count": 1,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "success",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          },
+          {
+            "trace_id": "synthetic-id-051",
+            "span_count": 15,
+            "workflow_span_count": 1,
+            "node_span_count": 14,
+            "follows_from_reference_count": 0,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "waiting",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          }
+        ],
+        "checks": {
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_bypasses_provider_nodes": true,
+          "degraded_path_traced": true
+        }
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-016",
+        "execution_id": "synthetic-id-045",
+        "terminal_state": "[redacted]",
+        "provider_call_count": 2,
+        "business_degradation": false,
+        "traces": [
+          {
+            "trace_id": "synthetic-id-052",
+            "span_count": 5,
+            "workflow_span_count": 1,
+            "node_span_count": 4,
+            "follows_from_reference_count": 1,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "success",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          },
+          {
+            "trace_id": "synthetic-id-053",
+            "span_count": 15,
+            "workflow_span_count": 1,
+            "node_span_count": 14,
+            "follows_from_reference_count": 0,
+            "workflow_spans": [
+              {
+                "workflow_name": "Product Signal Control Tower",
+                "execution_mode": "[redacted]",
+                "execution_status": "waiting",
+                "node_count": 24,
+                "error_type": null
+              }
+            ],
+            "node_names": [
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]",
+              "[redacted]"
+            ]
+          }
+        ],
+        "checks": {
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_bypasses_provider_nodes": true,
+          "degraded_path_traced": true
+        }
+      }
+    ]
+  }
+}

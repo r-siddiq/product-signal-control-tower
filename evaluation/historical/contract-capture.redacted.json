@@ -1,0 +1,355 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "3.0.0",
+    "synthetic": true,
+    "status": "credential_free_contract_acceptance_passed",
+    "evidence_class": "[redacted]",
+    "generated_at": "2026-07-30T20:20:55.227Z",
+    "workflow_contract": {
+      "name": "[redacted]",
+      "functional_nodes": 20,
+      "visual_lane_notes": 4,
+      "provider_nodes": 2,
+      "human_wait_nodes": 1,
+      "visible_form_fields": 3,
+      "credentials_in_export": false
+    },
+    "controls": {
+      "raw_text_persisted": false,
+      "vector_similarity_claimed": false,
+      "roadmap_priority_assigned_by_model": false,
+      "real_external_actions": 0,
+      "deterministic_contract_test": "[redacted]"
+    },
+    "aggregate": {
+      "cases_checked": 16,
+      "cases_passed": 16
+    },
+    "cases": [
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-001",
+        "normalized_source_key": "synthetic-id-001",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-002",
+        "normalized_source_key": "synthetic-id-002",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-003",
+        "normalized_source_key": "synthetic-id-003",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-004",
+        "normalized_source_key": "synthetic-id-004",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-005",
+        "normalized_source_key": "synthetic-id-005",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-006",
+        "normalized_source_key": "synthetic-id-006",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-007",
+        "normalized_source_key": "synthetic-id-007",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-008",
+        "normalized_source_key": "synthetic-id-008",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [
+          "[redacted]",
+          "[redacted]"
+        ],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-009",
+        "normalized_source_key": "synthetic-id-009",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-010",
+        "normalized_source_key": "synthetic-id-010",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-011",
+        "normalized_source_key": "synthetic-id-011",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-012",
+        "normalized_source_key": "synthetic-id-012",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-013",
+        "normalized_source_key": "synthetic-id-013",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-014",
+        "normalized_source_key": "synthetic-id-013",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 0,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-015",
+        "normalized_source_key": "synthetic-id-014",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      },
+      {
+        "synthetic": true,
+        "case_id": "synthetic-case-016",
+        "normalized_source_key": "synthetic-id-015",
+        "minimized_text_sha256": "[redacted]",
+        "sensitivity_classes": [],
+        "checks": {
+          "validation_ok": true,
+          "normalized_source_key": true,
+          "email_redactions": true,
+          "phone_redactions": true,
+          "raw_text_not_persisted": true,
+          "source_identity_present": true,
+          "provider_failure_control_preserved": true
+        },
+        "passed": true,
+        "expected_terminal_state": "[redacted]",
+        "expected_human_checkpoints": 1,
+        "expected_real_external_actions": 0
+      }
+    ]
+  }
+}

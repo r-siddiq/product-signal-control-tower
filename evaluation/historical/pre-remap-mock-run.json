@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-11-03T04:12:55Z",
+  "classification": "Earlier synthetic local-mock run before final taxonomy remapping; not a run of the current workflow",
+  "isolation": {
+    "test_only_workflow_model_endpoints_redirected_to_local_mock": true,
+    "real_provider_calls": 0,
+    "local_structured_mock_calls": 6,
+    "synthetic_credentials_only": true
+  },
+  "bootstrap": {
+    "initial_attempt": "failed because the shell bootstrap had CRLF line endings",
+    "corrected_retry": "passed with LF enforcement"
+  },
+  "database_migrations": {
+    "fresh_database_apply_passed": true,
+    "ledger_and_checksums_verified": true,
+    "pgvector_and_key_tables_verified": true,
+    "app_role_privilege_verified": true,
+    "repeat_application_refused": true
+  },
+  "workflow_import": {
+    "initial_raw_cli_import": "failed because the export had no workflow identifier",
+    "inactive_import_with_temporary_synthetic_identifiers": true,
+    "documented_inactive_import": true,
+    "explicit_activation": true,
+    "no_execution_on_activation": true
+  },
+  "playwright": {
+    "mode": "headless",
+    "browser": "locally installed Chromium-compatible browser",
+    "initial_attempts": "failed with insufficient execution-read scope on the disposable API key; rerun with corrected scope",
+    "scenarios": [
+      {
+        "scenario": "invalid",
+        "passed": true,
+        "captured_at": "2026-11-03T04:06:44.397Z",
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "provider_call_count": 0
+      },
+      {
+        "scenario": "replay",
+        "passed": true,
+        "captured_at": "2026-11-03T04:10:05.635Z",
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "provider_call_count": 0
+      },
+      {
+        "scenario": "reject",
+        "passed": true,
+        "captured_at": "2026-11-03T04:09:07.898Z",
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "provider_call_count": 2
+      },
+      {
+        "scenario": "approve",
+        "passed": true,
+        "captured_at": "2026-11-03T04:10:05.635Z",
+        "checks": {
+          "execution_status": true,
+          "terminal_node": true,
+          "provider_calls": true,
+          "human_reviews": true,
+          "terminal_state": true,
+          "delta_source_events": true,
+          "delta_replay_count": true,
+          "delta_signals": true,
+          "delta_product_ops_reviews": true,
+          "delta_artifacts": true,
+          "delta_outbox_rows": true,
+          "provider_nodes_absent_when_expected": true,
+          "trace_present": true,
+          "workflow_spans_present": true,
+          "node_spans_present": true,
+          "wait_resume_link_present": true,
+          "replay_trace_omits_provider_nodes": true
+        },
+        "provider_call_count": 2
+      }
+    ],
+    "documented_demo_preflight_passed": true
+  },
+  "limitations": [
+    "A local structured model mock was used; no real provider credentials or calls were used.",
+    "These four scenarios do not establish a complete run of all 21 defined gates or real-provider accuracy.",
+    "This rehearsal predates generic product-category remapping and does not verify the final taxonomy."
+  ]
+}

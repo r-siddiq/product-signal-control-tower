@@ -1,0 +1,34 @@
+{
+  "provenance": "Edited historical synthetic source-run data; identifiers, free text, URLs, credentials, and employer-specific labels are redacted or mapped to generic categories. This is not a run of the current sanitized project.",
+  "source_capture": {
+    "schema_version": "1.0.0",
+    "synthetic": true,
+    "status": "clean_import_acceptance_passed",
+    "captured_at": "2026-07-30T22:07:04.871Z",
+    "target": "[redacted]",
+    "created_inactive_probe_workflows": 2,
+    "removed_probe_workflows": 2,
+    "original_workflows_modified": false,
+    "credentials_imported": false,
+    "checks": [
+      {
+        "workflow": "Product Signal Control Tower",
+        "inactive": true,
+        "node_count_preserved": true,
+        "functional_node_count_preserved": true,
+        "node_names_preserved": true,
+        "connections_preserved": true,
+        "credentials_absent": true
+      },
+      {
+        "workflow": "Product Signal Control Tower",
+        "inactive": true,
+        "node_count_preserved": true,
+        "functional_node_count_preserved": true,
+        "node_names_preserved": true,
+        "connections_preserved": true,
+        "credentials_absent": true
+      }
+    ]
+  }
+}
