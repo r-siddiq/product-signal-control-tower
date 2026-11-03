@@ -825,7 +825,7 @@ validateWorkflow(companionWorkflowRelative, 'companion');
 const projectScopeExclusions = [
   "Root and runtime .env files are local configuration and excluded from checked-in source scans",
   "evaluation/local/ and runtime/tmp/ are generated evidence and temporary output locations",
-  "Agent configuration and instruction files are absent from the project tree",
+  "Local tool configuration files are excluded from the project tree",
   "An earlier reference matrix is not included with the project files",
   "The original presentation scripts are not part of the summary page at presentation/index.html",
   "Supporting project artifacts are outside the retained project scope",
